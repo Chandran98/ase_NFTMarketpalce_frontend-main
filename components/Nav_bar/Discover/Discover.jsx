@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Discover = () => {
+export default function Discover() {
   return (
-    <div>Discover</div>
+    <>
+    </>
   )
 }
 
-export default Discover
