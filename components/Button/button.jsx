@@ -1,9 +1,11 @@
 import React from 'react'
 
-const button = () => {
+export default function button({buttontext ,btcolor}) {
   return (
-    <div>button</div>
+    <button className={`${btcolor} rounded-full p-2 text-white mt-6 w-40  lg:shadow shadow-gray-300`}>
+     
+     {buttontext}
+  </button>
   )
 }
 
-export default button

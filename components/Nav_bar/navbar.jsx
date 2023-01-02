@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MdNotificationsActive } from "react-icons/md";
-import Data, { Helpcenterdata } from "../Data/data"
+import  {Discoverdata, Helpcenterdata } from "../Data/data"
 
 export default function Landingpagenavbar() {
 
@@ -40,7 +40,7 @@ export default function Landingpagenavbar() {
   };
 
   return (
-    <div className=" row w-screen group items-center h-20 p-2 bg-slate-200 justify-between align-middle lg:flex md:flex hidden   ">
+    <div className=" row w-full group items-center h-20 p-2 bg-slate-200 justify-between align-middle lg:flex md:flex hidden   ">
       <Link href="/" className="ml-3 ">
         <Image
           src="/../public/favicon.ico"
@@ -73,7 +73,7 @@ export default function Landingpagenavbar() {
           {discoverdropdown && (
             <div className="item-dropdown cursor-pointer flex-col ">
               <div className=" absolute p-4  bg-white  w-[200px] rounded-lg z-10 ">
-                <Data classPrps="flex  mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto text-base hover:text-white font-semibold"/>
+                <Discoverdata classPrps="flex  mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto text-base hover:text-white font-semibold"/>
               </div>
             </div>
           )}
@@ -91,7 +91,7 @@ export default function Landingpagenavbar() {
           {helpcenterdropdown && (
             <div className="item-dropdown cursor-pointer flex-col">
               <div className="dropdown flex-col absolute p-4 bg-white w-300px rounded-lg z-10 ">
-               <Helpcenterdata  classPro  ps="flex  mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto text-base hover:text-white font-semibold"/>
+               <Helpcenterdata  classProps="flex  mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto text-base hover:text-white font-semibold"/>
               </div>
             </div>
           )}

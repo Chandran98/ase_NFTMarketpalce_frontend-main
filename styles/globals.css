@@ -8,6 +8,8 @@
     @apply bg-gray-50
   }
 }
+
+
 html,
 body {
   padding: 0;
@@ -34,3 +36,5 @@ a {
     background: black;
   }
 }
+
+

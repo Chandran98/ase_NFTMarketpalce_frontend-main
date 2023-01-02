@@ -41,7 +41,7 @@ import nft_image_2 from "./nft-image-2.png";
 import nft_image_3 from "./nft-image-3.png";
 import musiceWave from "./musicwave.png";
 import update from "./update.png";
-import earn from "./earn.png";
+import earn from "./eran.png";
 import NFTVideo from "./nftvideo.png";
 import hero2 from "./hero2.png";
 import upload from "./upload.png";
@@ -53,10 +53,10 @@ import founder1 from "./founder1.jpg";
 import founder2 from "./founder2.jpg";
 import founder3 from "./founder3.jpg";
 import founder4 from "./founder4.jpg";
-import loader from "./loader.gif";
+import loader from "./loadergif.gif";
 import errorgif from "./error.gif";
 import transfer from "./transfer.gif";
-import transferEther from "./etherTransfer.gif";
+import transferEther from "./ethereTransfer.gif";
 
 export default {
   hero2,
