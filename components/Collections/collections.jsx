@@ -166,13 +166,13 @@ const Collection = () => {
                 <BsFillAlarmFill /> 24 hours
               </button>
               <button
-                className={` flex items-center gap-2 font-medium whitespace-nowrap bg-${following? "cyan-700" : "white"} text-${!following? "black" : "white"} px-3 py-2 bg-white hover:bg-cyan-700 hover:text-white  text-sm sm:px-7 sm:py-3 capitalize rounded-full bg-primary-6000 text-primary-50 focus:outline-none`}
+                className={` flex items-center gap-2 font-medium whitespace-nowrap bg-${following? "cyan-700" : "white"} text-${!following? "black" : "white"} px-3 py-2 hover:bg-cyan-700 hover:text-white  text-sm sm:px-7 sm:py-3 capitalize rounded-full bg-primary-6000 text-primary-50 focus:outline-none`}
                 onClick={() => openFollower()}
               >
                 <BsCalendar3 /> 7 days
               </button>
               <button
-                className={`  flex items-center gap-2 font-medium whitespace-nowrap bg-${news? "cyan-700" : "white"} text-${!news? "black" : "white"}  px-3 bg-white hover:bg-cyan-700 hover:text-white  py-2 text-sm sm:px-7 sm:py-3 capitalize rounded-full bg-primary-6000 text-primary-50 focus:outline-none`}
+                className={`  flex items-center gap-2 font-medium whitespace-nowrap bg-${news? "cyan-700" : "white"} text-${!news? "black" : "white"}  px-3 hover:bg-cyan-700 hover:text-white  py-2 text-sm sm:px-7 sm:py-3 capitalize rounded-full bg-primary-6000 text-primary-50 focus:outline-none`}
                 onClick={() => openNews()}
               >
                 <BsFillCalendarDateFill /> 30 days

@@ -189,7 +189,7 @@ export default function Follower ({ TopCreator }) {
       <button className={`flex items-center gap-2 font-medium whitespace-nowrap bg-${news? "cyan-700" : "white"} text-${!news? "black" : "white"} hover:bg-cyan-700 hover:text-white px-3 py-2 text-sm sm:px-7 sm:py-3 capitalize rounded-full bg-primary-6000 text-primary-50 focus:outline-none`} onClick={() => openNews()}>
              show more
           </button>
-          <button className={`flex items-center gap-2 font-medium whitespace-nowrap bg-${news? "cyan-700" : "white"} text-${!news? "black" : "white"} hover:bg-cyan-700 hover:text-white px-3 py-2 text-sm sm:px-7 sm:py-3 capitalize rounded-full bg-primary-6000 text-primary-50 focus:outline-none`} onClick={() => openNews()}>
+          <button className={`flex items-center gap-2 font-medium whitespace-nowrap bg-${news? "white" : "cyan-700"} text-${news? "black" : "white"} hover:bg-cyan-700 hover:text-white px-3 py-2 text-sm sm:px-7 sm:py-3 capitalize rounded-full bg-primary-6000 text-primary-50 focus:outline-none`} onClick={() => openNews()}>
              Become a author
           </button>
       </div>

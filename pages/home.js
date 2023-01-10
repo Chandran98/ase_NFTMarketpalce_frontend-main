@@ -13,6 +13,9 @@ import Nftslider2 from "../components/dummy/nftslider2";
 import Collection from "../components/Collections/collections";
 import Follower from "../components/follower/follower";
 import Alive from "../components/audiolive/audiolive";
+import Dragsilder from "../components/slider/slider";
+import Brand from "../components/brand";
+import Video from "../components/video_slide";
 
 export default function home() {
   return (
@@ -23,11 +26,13 @@ export default function home() {
       <Collection/>
       <Nftslider/>
       <Alive/>
+      <Dragsilder/>
       <Follower/>
       <Filterart/>
       <Nftcard/>
       <Category/>
-      {/* <Nftslider2/> */}
+      <Brand/>
+      <Video/>
       <Subscription/>
       <Footer />
     </>

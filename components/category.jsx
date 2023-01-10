@@ -53,9 +53,9 @@ export default function nftslider2() {
   ];
   return (
   <>
-    <div className={"m-auto w-[80%]"}>
+    <div className={"m-20 w-[80%] "}>
         
-  <Titles heading={"Browse by category"} paragraph={"Explore the NFTs in the most featured categories."}/>
+  <div className="ml-16" ><Titles heading={"Browse by category"} paragraph={"Explore the NFTs in the most featured categories."}/></div>
       <div className={"p-16 flex gap-8"}>
         {CategoryArray.map((el, i) => (
           <div className={" leading-none  transition-all ease-in overflow-hidden cursor-pointer pb-4"} key={i + 1}>
