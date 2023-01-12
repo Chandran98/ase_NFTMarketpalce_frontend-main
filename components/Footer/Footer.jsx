@@ -9,19 +9,19 @@ import { BsFacebook } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-
+import img from "../../img"
 export default function Footer() {
 
 
 
   return (
-    <div className=" h-80 bg-white  flex-row lg:flex  hidden">
+    <div className=" h-80 bg-white px-12 py-10 flex-row lg:flex  hidden">
       <div className="  flex-[10%]">
         <Image
-          src="/../public/favicon.ico"
+          src={img.logo2}
           className="img-fluid d-3 mt-4 ml-4 "
           alt="#"
-          width={35}
+          width={100}
           height={100}
         />
         <p className="p-4 text-justify text-sm">

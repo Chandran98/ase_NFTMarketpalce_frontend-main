@@ -26,6 +26,8 @@ import service3 from "./service-3.png";
 import service4 from "./service-4.png";
 import logoLight from "./logo-light.svg";
 import logo from "./logo.svg";
+import logo1 from "./logo.png";
+import logo2 from "./logo_2.png";
 import facebook from "./facebook.svg";
 import twitter from "./twitter.svg";
 import telegram from "./telegram.svg";
@@ -44,6 +46,7 @@ import update from "./update.png";
 import earn from "./eran.png";
 import NFTVideo from "./nftvideo.png";
 import hero2 from "./hero2.png";
+import banner from "./banner.png";
 import upload from "./upload.png";
 import provider1 from "./provider-1.png";
 import provider2 from "./provider-2.png";
@@ -59,7 +62,7 @@ import transfer from "./transfer.gif";
 import transferEther from "./ethereTransfer.gif";
 
 export default {
-  hero2,
+  hero2,banner,
   founder1,
   founder2,
   founder3,
@@ -105,7 +108,7 @@ export default {
   service2,
   service3,
   service4,
-  logo,
+  logo, logo1,logo2,
   logoLight,
   facebook,
   telegram,

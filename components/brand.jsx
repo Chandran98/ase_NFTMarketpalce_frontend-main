@@ -18,12 +18,12 @@ const Brand = () => {
     >
       <div className={" relative flex flex-col lg:flex-row items-center  "}>
         <div className={"flex-shrink-0 mb-16 lg:mb-0 lg:mr-10 lg:w-2/5"}>
-          {/* <Image src={images.logo} alt="brand logo" width={100} height={100} /> */}
-          <div className=" flex gap-6 text-primary-6000 w-28">
+          
+          <div className=" flex gap-6 text-primary-6000 ">
             <Link href="/">
-              <DiJqueryLogo className={"h-12 dark:hidden"} />
+            <Image src={images.logo2} alt="brand logo" width={100} height={100} />
             </Link>
-            <h1 className="font-bold text-3xl">Obito</h1>
+            {/* <h1 className="font-bold text-3xl">Obito</h1> */}
           </div>
           <h1 className="font-semibold text-lg sm:text-4xl xl:text-6xl mt-6 sm:mt-10 !leading-[1.112] tracking-tight">
             Earn free crypto with Ciscrypt

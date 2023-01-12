@@ -1,7 +1,7 @@
 import React from "react";
 import Images from "next/image";
 import images from "../img";
-import Titles from "../utils/titlecard"
+import Titles from "../utils/titlecard";
 import { BsCircleFill } from "react-icons/bs";
 
 export default function nftslider2() {
@@ -52,34 +52,44 @@ export default function nftslider2() {
     // },
   ];
   return (
-  <>
-    <div className={"m-20 w-[80%] "}>
-        
-  <div className="ml-16" ><Titles heading={"Browse by category"} paragraph={"Explore the NFTs in the most featured categories."}/></div>
-      <div className={"p-16 flex gap-8"}>
-        {CategoryArray.map((el, i) => (
-          <div className={" leading-none  transition-all ease-in overflow-hidden cursor-pointer pb-4"} key={i + 1}>
-            <Images
-              src={el.images}
-              className={" rounded-xl"}
-              alt="Background image"
-              width={800}
-              height={150}
-              // objectFit="cover"
-            />
+    <>
+      <div className={"m-20 w-[80%] "}>
+        <div className="ml-16">
+          <Titles
+            heading={"Browse by category"}
+            paragraph={"Explore the NFTs in the most featured categories."}
+          />
+        </div>
+        <div className={"p-16 flex gap-8"}>
+          {CategoryArray.map((el, i) => (
+            <div
+              className={
+                " leading-none  transition-all ease-in overflow-hidden cursor-pointer pb-4"
+              }
+              key={i + 1}
+            >
+              <Images
+                src={el.images}
+                className={" rounded-xl"}
+                alt="Background image"
+                width={800}
+                height={150}
+                // objectFit="cover"
+              />
 
-            <div className={'mt-4 flex items-center '}>
-              <span>
-                <BsCircleFill />
-              </span>
-              <div className={"ml-3"}>
-                <h4>{images.name}</h4>
-                <small>{i + 1}995 NFTS</small>
+              <div className={"mt-4 flex items-center "}>
+                <span>
+                  <BsCircleFill />
+                </span>
+                <div className={"ml-3"}>
+                  <h4>{images.name}</h4>
+                  <small>{i + 1}995 NFTS</small>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div></>
+    </>
   );
 }

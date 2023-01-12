@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import image from "../../img"
 import { MdNotificationsActive } from "react-icons/md";
 import  {Discoverdata, Helpcenterdata } from "../Data/data"
 
@@ -43,10 +44,10 @@ export default function Landingpagenavbar() {
     <div className=" row w-full group items-center h-20 p-2 bg-slate-200 justify-between align-middle lg:flex md:flex hidden   ">
       <Link href="/" className="ml-3 ">
         <Image
-          src="/../public/favicon.ico"
+          src={ image.logo2}
           className="img-fluid d-3 "
           alt="#"
-          width={35}
+          width={100}
           height={100}
         />
       </Link>
