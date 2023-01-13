@@ -119,12 +119,12 @@ const btnclass="flex-shrink-0 block font-medium px-4 py-2 text-sm sm:px-6 sm:py-
           </div>
 
           {openList && (
-            <div className={"absolute right-0 z-20  p-6    w-56  py-1 mt-2 overflow-auto text-sm text-neutral-900 dark:text-neutral-200 bg-white rounded-2xl shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-neutral-900 dark:ring-neutral-700"}>
+            <div className={"relative right-0 z-20  p-6    w-56  py-1 mt-2 overflow-auto text-sm text-neutral-900 dark:text-neutral-200 bg-white rounded-2xl shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-neutral-900 dark:ring-neutral-700"}>
               {listArray.map((el, i) => (
                 <div
                   key={i + 1}
                   onClick={() => setSelectedMenu(el)}
-                  className={" flex cursor-pointer hover:bg-cyan-200  select-none relative py-2 pl-10 pr-4"}
+                  className={" flex  cursor-pointer hover:bg-cyan-200  select-none relative py-2 pl-10 pr-4"}
                 >
                   <p className="gap-3 mr-3">{el}</p>
                   <span>{selectedMenu == el && <TiTick />}</span>

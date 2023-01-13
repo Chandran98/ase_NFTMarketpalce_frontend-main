@@ -77,8 +77,8 @@ const Author = () => {
     <div className={""}>
       
       <Banner bannerImage={images.creatorbackground2} />
-      <AuthorProfileCard  />
       
+      <div className="-mt-20"> <AuthorProfileCard  /></div>
       {/* <AuthorProfileCard currentAccount={currentAccount} /> */}
      {/* <AuthorTaps
         setCollectiables={setCollectiables}

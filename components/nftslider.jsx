@@ -220,17 +220,17 @@ export default function Nftslider() {
                       <path
                         d="M9.57 5.92993L3.5 11.9999L9.57 18.0699"
                         stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
+                        strokeWidth="1.5"
+                        strokeMiterlimit="10"
+                        strokeLinecap="round"
                         stroke-linejoin="round"
                       ></path>
                       <path
                         d="M20.5 12H3.67004"
                         stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
+                        strokeWidth="1.5"
+                        strokeMiterlimit="10"
+                        strokeLinecap="round"
                         stroke-linejoin="round"
                       ></path>
                     </svg>
@@ -245,17 +245,17 @@ export default function Nftslider() {
                       <path
                         d="M14.4301 5.92993L20.5001 11.9999L14.4301 18.0699"
                         stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
+                        strokeWidth="1.5"
+                        strokeMiterlimit="10"
+                        strokeLinecap="round"
                         stroke-linejoin="round"
                       ></path>
                       <path
                         d="M3.5 12H20.33"
                         stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
+                        strokeWidth="1.5"
+                        strokeMiterlimit="10"
+                        strokeLinecap="round"
                         stroke-linejoin="round"
                       ></path>
                     </svg>
@@ -285,8 +285,8 @@ export default function Nftslider() {
                       d="M12.62 20.81C12.28 20.93 11.72 20.93 11.38 20.81C8.48 19.82 2 15.69 2 8.68998C2 5.59998 4.49 3.09998 7.56 3.09998C9.38 3.09998 10.99 3.97998 12 5.33998C13.01 3.97998 14.63 3.09998 16.44 3.09998C19.51 3.09998 22 5.59998 22 8.68998C22 15.69 15.52 19.82 12.62 20.81Z"
                       stroke="currentColor"
                       fill="#ef4444"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
                       stroke-linejoin="round"
                     ></path>
                   </svg>

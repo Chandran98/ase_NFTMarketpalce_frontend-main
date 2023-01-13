@@ -36,7 +36,7 @@ export default function Video() {
               alt="Video image"
               width={1920}
               height={1080}
-              objectFit="cover"
+              // objectFit="cover"
               className={
                 "  object-cover w-full h-full transition-transform group-hover:scale-105 duration-300  "
               }

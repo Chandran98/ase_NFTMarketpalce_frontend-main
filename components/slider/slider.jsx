@@ -54,7 +54,7 @@ const Slider = () => {
   };
 
   return (
-    <div className={"   m-10 ml-10 w-[90%]   "}>
+    <div className={"   m-10 ml-25 w-[90%]   "}>
       <h2 className="flex items-center   text-3xl md:text-4xl font-semibold">
         Explore NFTs Video
       </h2>

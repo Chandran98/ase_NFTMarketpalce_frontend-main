@@ -24,7 +24,7 @@ const DaysComponents = ({ el, i }) => {
             alt="profile background"
             width={500}
             height={300}
-            objectFit="covers"
+            // objectFit="covers"
           />
         </div>
 
