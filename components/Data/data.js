@@ -7,6 +7,7 @@ const Discoverdata = ({ classPrps }) => {
     { title: "Search", pages: "/search" },
     { title: "Author profile", pages: "/author" },
     { title: "NFT Details", pages: "/nft-details" },
+    { title: "NFTUpload", pages: "/uploadnft" },
     { title: "Account Setting", pages: "/account" },
     { title: "Connect Wallet", pages: "/connectwallet" },
     { title: "Blog", pages: "/blog" },
