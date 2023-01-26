@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useContext,useEffect} from "react";
 import Navbar from "../components/Nav_bar/navbar";
 import Footer from "../components/Footer/Footer";
 import Hero from "../components/hero";
@@ -17,7 +17,10 @@ import Dragsilder from "../components/slider/slider";
 import Brand from "../components/brand";
 import Video from "../components/video_slide";
 
-export default function home() {
+import {Asecontext }from "../context/Asecontext";
+export default function Home() {
+  const {}= useContext(Asecontext);
+
   return (
     <>
       <Navbar />

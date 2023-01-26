@@ -34,7 +34,7 @@ export default function Sidebar() {
       </div>
 
      {
-      opensidebar ? <div  className="p-6  h-screen bg-white z-20 fixed top-0 -left-96 md:hidden  lg:w-60 left-0  peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
+      opensidebar ? <div  className="p-6  h-screen bg-white z-20 fixed top-0 -left-96 md:hidden  lg:w-60  peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
       <div className="flex flex-col justify-start item-center ">
         <>
           <h1 className="text-base text-start cursor-pointer font-[700] text-blue-900 ">
