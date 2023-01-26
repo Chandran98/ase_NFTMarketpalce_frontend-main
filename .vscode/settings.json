@@ -1,11 +1,14 @@
 {
     "cSpell.words": [
         "discoverdropdown",
+        "fetchcontract",
         "handlediscoverdropdown",
         "handlehelpcenterdropdown",
         "helpcenterdropdown",
         "helpcenteritems",
+        "ipfs",
         "Landingpagenavbar",
+        "Orprovider",
         "setdiscoverdropdown",
         "sethelpcenterdropdown"
     ]
