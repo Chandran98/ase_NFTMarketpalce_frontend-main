@@ -32,9 +32,8 @@ export const Aseprovider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState("");
 
   useEffect(() => {
-    checkWalletConnected(),
-    connectWallet;
-  },[]);
+    checkWalletConnected(), connectWallet;
+  }, []);
 
   const checkWalletConnected = async () => {
     try {
@@ -66,19 +65,92 @@ export const Aseprovider = ({ children }) => {
     }
   };
 
-   const uploadToIPFS= async(file)=>{
-try {
-  const upload= client.add({content:file});
-  const url= `https://ipfs.infura.io/ipfs/${(await upload).path}`;
-  return url;
-} catch (error) {
-  console.log("Couldn't upload to chain")
-  
-}
-   }
+  const uploadToIPFS = async (file) => {
+    try {
+      const upload = client.add({ content: file });
+      const url = `https://ipfs.infura.io/ipfs/${(await upload).path}`;
+      return url;
+    } catch (error) {
+      console.log("Couldn't upload to chain");
+    }
+  };
+
+  const createNft = async (name, price, image, description, router) => {
+    if (!name || !price || !image || !description) {
+      return console.log("error");
+    } else {
+      const data = JSON.stringify({ name, description, image });
+      try {
+        const added = await client.add(data);
+        const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+        await createSale(url, price);
+      } catch (error) {
+        console.log(`Something went wrong ${error}`);
+      }
+    }
+  };
+
+  const createSale = async (url, formInputPrice, isReselling, id) => {
+    try {
+      console.log(url, formInputPrice, isReselling, id);
+
+      const price = ethers.utils.parseUnits(formInputPrice, "ether");
+      const contract = await connectWallet();
+      const listingPrice = await contract.getListingPrice();
+
+      const transaction = !isReselling
+        ? await contract.Createnft(url, price, {
+            value: listingPrice.toString(),
+          })
+        : await contract.resellnft(id, price, {
+            value: listingPrice.toString(),
+          });
+      await transaction.wait();
+      console.log(transaction);
+    } catch (error) {
+      console.log(`Something went into ${error}`);
+    }
+  };
+
+  const fetchNft = async () => {
+    try {
+      const provider = new ethers.providers.JsonRpcProvider();
+      const contract = fetchcontract(provider);
+      const data = await contract.unsoldnft();
+      const items = await Promise.all(
+        data.map(
+          async ({ tokenId, seller, owner, price: unformattedPrice }) => {
+            const tokenURI = await contract.tokenURI(tokenId);
+            const {
+              data: { image, name, description },
+            } = await axios.get(tokenURI);
+            const price = ethers.utils.formatUnits(
+              unformattedPrice.toString(),
+              "ether"
+            );
+            return {
+              price,
+              tokenId: tokenId.toNumber(),
+              seller,
+              owner,
+              image,
+              name,
+              description,
+              tokenURI,
+            };
+          }
+        )
+      );
+      return items;
+    } catch (error) {
+      console.log(`Something went to ${error}`);
+    }
+  };
 
   return (
-    <Asecontext.Provider value={{ title, checkWalletConnected, connectWallet,uploadToIPFS }}>
+    <Asecontext.Provider
+      value={{ title, checkWalletConnected, connectWallet, uploadToIPFS }}
+    >
       {children}
     </Asecontext.Provider>
   );

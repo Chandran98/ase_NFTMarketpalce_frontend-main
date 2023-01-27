@@ -50,6 +50,9 @@ contract ASE is ERC721URIStorage {
     function updatelisting(uint256 _listingprice) public payable onlyOwner {
         listingprice = _listingprice;
     }
+    function getListingPrice()public view returns(uint256){
+        return listingprice;
+    }
 
     function Createnft(
         string calldata tokenuri,
