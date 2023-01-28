@@ -48,6 +48,7 @@ export const Aseprovider = ({ children }) => {
         } else {
           console.log("No accounts found");
         }
+        console.log(currentAccount);
       }
     } catch (error) {}
   };
@@ -57,7 +58,7 @@ export const Aseprovider = ({ children }) => {
       if (!window.ethereum) {
         return console.log("Install metamask");
       }
-      const account = await window.ethereum.request({ method: "eth_request" });
+      const account = await window.ethereum.request({ method: "eth_requestAccounts" });
       setCurrentAccount(account[0]);
       window.location.reload();
     } catch (error) {
@@ -147,9 +148,70 @@ export const Aseprovider = ({ children }) => {
     }
   };
 
+  const fetchNFtorListedNft = async (type) => {
+    try {
+      const contract = await connectingContract();
+      const data =
+        type == "fetchItemsListed"
+          ? await contract.saleout()
+          : await contract.fetchnft();
+
+      const items = await Promise.all(
+        data.map(
+          async ({ tokenId, seller, owner, price: unformattedPrice }) => {
+            const tokenURI = await contract.tokenURI(tokenId);
+            const {
+              data: { image, name, description },
+            } = await axios.get(tokenURI);
+            const price = ethers.utils.formatUnits(
+              unformattedPrice.toString(),
+              "ether"
+            );
+            return {
+              price,
+              tokenId: tokenId.toNumber(),
+              seller,
+              owner,
+              image,
+              name,
+              description,
+              tokenURI,
+            };
+          }
+        )
+      );
+      return items;
+    } catch (error) {
+      console.log(`Something went ${error}`);
+    }
+  };
+
+  const buyNft = async (nft) => {
+    try {
+      const contract = await connectingContract();
+      const price = ethers.utils.parseUnits(nft.price.toString());
+      const transaction = await contract.salenft(nft.tokenId, { value: price });
+
+      await transaction.wait();
+    } catch (error) {
+      console.log(`Something went to ${error}`);
+    }
+  };
+
   return (
     <Asecontext.Provider
-      value={{ title, checkWalletConnected, connectWallet, uploadToIPFS }}
+      value={{
+        title,
+        currentAccount,
+        checkWalletConnected,
+        connectWallet,
+        uploadToIPFS,
+        fetchNFtorListedNft,
+        fetchNft,
+        buyNft,
+        createNft,
+        createSale,
+      }}
     >
       {children}
     </Asecontext.Provider>

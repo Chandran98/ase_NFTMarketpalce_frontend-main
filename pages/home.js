@@ -19,8 +19,11 @@ import Video from "../components/video_slide";
 
 import {Asecontext }from "../context/Asecontext";
 export default function Home() {
-  const {}= useContext(Asecontext);
+  const {checkWalletConnected , connectWallet}= useContext(Asecontext);
 
+  useEffect(()=>{
+    checkWalletConnected();
+  },[])
   return (
     <>
       <Navbar />

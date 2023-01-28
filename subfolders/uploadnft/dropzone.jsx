@@ -37,20 +37,22 @@ const DropZone = ({
     <div className={"mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-neutral-300 dark:border-neutral-6000 border-dashed rounded-xl"}>
       <div className={"space-y-1 text-center"} {...getRootProps()}>
         <input {...getInputProps()} />
-        <div className={" leading-3"}>
-          <p className="text-xs text-neutral-500 dark:text-neutral-400">{title}</p>
+        <div className={" leading-3 p-4 "}>
+          <p className="text-xs text-neutral-500 p-2 dark:text-neutral-400">{title}</p>
           <div className={"mx-auto h-12 w-12 text-neutral-400"}>
             <Image
               src={images.upload}
               alt="upload"
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               objectFit="contain"
-              className={" rounded-lg"}
+              className={"  rounded-lg "}
             />
           </div>
-          <p className="flex text-sm text-neutral-6000 dark:text-neutral-300">{heading}</p>
-          <p className="pl-1">{subHeading}</p>
+          <div className="p-2">
+          <p className="   text-sm font-semibold text-neutral-6000 dark:text-neutral-300">{heading}</p>
+          <p className="  text-sm">{subHeading}</p>
+          </div>
         </div>
       </div>
 

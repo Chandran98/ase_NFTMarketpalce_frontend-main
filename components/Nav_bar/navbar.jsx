@@ -1,17 +1,18 @@
 /* eslint-disable react/jsx-key */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import image from "../../img"
+import image from "../../img";
 import { MdNotificationsActive } from "react-icons/md";
-import  {Discoverdata, Helpcenterdata } from "../Data/data"
-
+import {CgProfile} from "react-icons/cg";
+import { Discoverdata, Helpcenterdata } from "../Data/data";
+import { Asecontext } from "../../context/Asecontext";
 export default function Landingpagenavbar() {
-
-
   const [discoverdropdown, setdiscoverdropdown] = useState(false);
   const handlediscoverdropdown = () => {
-    discoverdropdown ? setdiscoverdropdown(false) : [setdiscoverdropdown(true),sethelpcenterdropdown(false)];
+    discoverdropdown
+      ? setdiscoverdropdown(false)
+      : [setdiscoverdropdown(true), sethelpcenterdropdown(false)];
   };
 
   const helpcenteritems = [
@@ -29,7 +30,7 @@ export default function Landingpagenavbar() {
       : [sethelpcenterdropdown(true), setdiscoverdropdown(false)];
   };
   const profileitems = [
-    { title: "My Profile",  },
+    { title: "My Profile" },
     { title: "My Items" },
     { title: "Edit Profile" },
     { title: "Help" },
@@ -40,11 +41,13 @@ export default function Landingpagenavbar() {
     profiledropdown ? setprofiledropdown(false) : setprofiledropdown(true);
   };
 
+  const { currentAccount, connectWallet } = useContext(Asecontext);
+
   return (
-    <div className=" row w-full group items-center h-20 p-2 bg-slate-200 justify-between align-middle lg:flex md:flex hidden   ">
-      <Link href="/" className="ml-3 ">
+    <div className="container py-5 relative flex justify-between items-center space-x-4 xl:space-x-8 p-32 ">
+      <div className="flex  flex-grow items-center space-x-3 sm:space-x-8 lg:space-x-10"><Link href="/" className="ml-3 ">
         <Image
-          src={ image.logo2}
+          src={image.logo2}
           className="img-fluid d-3 "
           alt="#"
           width={100}
@@ -61,12 +64,12 @@ export default function Landingpagenavbar() {
           type="text"
         />
       </div>
-
-      <div className="menu  flex ">
+</div>
+      <div className="  flex ">
         {/* Discover */}
         <div className="navbar-item px-5">
           <button
-            className="dropdown-custom dropdown-toggle btn flex-col"
+            className="dropdown-custom dropdown-toggle btn flex-col font-bold"
             onClick={handlediscoverdropdown}
           >
             Discover
@@ -74,7 +77,7 @@ export default function Landingpagenavbar() {
           {discoverdropdown && (
             <div className="item-dropdown cursor-pointer flex-col ">
               <div className=" absolute p-4  bg-white  w-[200px] rounded-lg z-10 ">
-                <Discoverdata classPrps="flex  mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto text-base hover:text-white font-semibold"/>
+                <Discoverdata classPrps="flex  mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto text-base hover:text-white font-semibold" />
               </div>
             </div>
           )}
@@ -84,7 +87,7 @@ export default function Landingpagenavbar() {
 
         <div className="navbar-item px-5">
           <button
-            className="dropdown-custom dropdown-toggle btn flex-col"
+            className="dropdown-custom dropdown-toggle btn flex-col font-bold"
             onClick={handlehelpcenterdropdown}
           >
             Help Center
@@ -92,24 +95,31 @@ export default function Landingpagenavbar() {
           {helpcenterdropdown && (
             <div className="item-dropdown cursor-pointer flex-col">
               <div className="dropdown flex-col absolute p-4 bg-white w-300px rounded-lg z-10 ">
-               <Helpcenterdata  classProps="flex  mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto text-base hover:text-white font-semibold"/>
+                <Helpcenterdata classProps="flex  mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto text-base hover:text-white font-semibold" />
               </div>
             </div>
           )}
         </div>
       </div>
-      {/* Notification */}
-      <div className="relative  bg-black text-white rounded-full  p-2   flex justify-center items-center      ">
+   <div className="flex items-center gap-3">
+       {/* Notification */}
+       <div className="relative  bg-cyan-600 text-white rounded-full  p-2   flex justify-center items-center      ">
         <MdNotificationsActive className=" text-2xl" />
       </div>
-
+      <div className=" relative cursor-pointer">
+        {currentAccount == "" ? (
+          <button className="relative h-auto inline-flex items-center justify-center rounded-full  text-sm sm:text-base font-medium px-4 py-2  bg-cyan-600 hover:bg-cyan-700 text-neutral-50  " onClick={() => connectWallet()}> Connect</button>
+        ) : (
+          <Link href="/uploadnft"><button className=" relative h-auto inline-flex items-center justify-center rounded-full  text-sm sm:text-base font-medium px-4 py-2  bg-cyan-600 hover:bg-cyan-700 text-neutral-50   " onClick={() => {}}> Create</button></Link>
+        )}
+      </div>
       {/* Profile */}
-      <div>
+      <div className="">
         <button
           onClick={handleprofiledropdown}
-          className=" bg-black  mr-3 rounded-lg text-white px-6 py-2  "
+          className="  inline-flex items-center justify-center rounded-full  text-sm sm:text-base font-medium p-3  bg-cyan-600 hover:bg-cyan-700 text-neutral-50  "
         >
-          Profile
+           <CgProfile className=" text-xl "/>
         </button>
         {profiledropdown && (
           <div className="item-dropdown cursor-pointer flex-col">
@@ -127,6 +137,7 @@ export default function Landingpagenavbar() {
           </div>
         )}
       </div>
+   </div>
     </div>
   );
 }

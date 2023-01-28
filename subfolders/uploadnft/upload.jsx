@@ -81,9 +81,9 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
         <div className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">
           <label htmlFor="website" className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">Website</label>
           <div className={"formStyle.Form_box_input_box"}>
-            <div className={"formStyle.Form_box_input_box_icon"}>
+            {/* <div className={"formStyle.Form_box_input_box_icon"}>
               <MdOutlineHttp />
-            </div>
+            </div> */}
 
             <input
               type="text"
@@ -93,7 +93,7 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
             />
           </div>
 
-          <p className={" p-4"}>
+          <p className={" pb-4  text-xs"}>
             Ciscrypt will include a link to this URL on this items detail page,
             so that users can click to learn more about it. You are welcome to
             link to your own webpage with more details.
@@ -101,10 +101,10 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
         </div>
 
         <div className="my-8"> 
-        <div className="nc-Label text-base  font-medium text-neutral-900 dark:text-neutral-200 ">
+        <div className=" text-lg  font-medium text-neutral-900 dark:text-neutral-200 ">
           <label htmlFor="description">Description</label>
           
-          <p>
+          <p className="pb-4  text-sm font-medium">
             The description will be included on the items detail page
             underneath its image. Markdown syntax is supported.
           </p>
@@ -113,15 +113,15 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
             name=""
             id=""
             cols="30"
-            rows="6"
+            rows="5"
             placeholder="something about yourself in few words"
-            className="block w-full text-sm rounded-2xl border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 mt-1.5"
+            className="p-4 w-full text-sm rounded-2xl border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 mt-1.5"
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
 
         <div className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">
-          <label htmlFor="name">Choose collection</label>
+          <label className=" text-lg  font-medium text-neutral-900 dark:text-neutral-200 " htmlFor="name">Choose collection</label>
           <p className={"text-neutral-500 dark:text-neutral-400 text-sm"}>
             Choose an exiting collection or create a new one
           </p>
@@ -158,8 +158,8 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-2.5"}>
           <div className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">
            
-            <div className={"mt-1.5 flex items-center gap-3 p-3"}>
-            <label className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 " htmlFor="Royalties">Royalties</label>
+            <div className={"mt-1.5 flex items-center gap-3 "}>
+            <label className="nc-Label text-lg font-medium text-neutral-900 dark:text-neutral-200 " htmlFor="Royalties">Royalties</label>
             <FaPercent />
            
             </div>
@@ -171,9 +171,9 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
           </div>
           <div className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">
            
-            <div className={"mt-1.5 flex items-center gap-3 p-3"}>
-              <div className={"formStyle.Form_box_input_box_icon"}>
-              <label className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 " htmlFor="size">Size</label>
+            <div className={"mt-1.5  items-center gap-3 p-3"}>
+              <div className={"flex items-center gap-3"}>
+              <label className="nc-Label text-lg font-medium text-neutral-900 dark:text-neutral-200 " htmlFor="size">Size</label>
                 <MdOutlineAttachFile />
               </div>
               <input className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 disabled:bg-neutral-200 dark:disabled:bg-neutral-800 rounded-2xl text-sm font-normal h-11 px-4 py-3 "
@@ -184,8 +184,8 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
             </div>
           </div>
           <div className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">
-            <div className={"mt-1.5 flex items-center gap-3 p-3"}>
-              <div className={"formStyle.Form_box_input_box_icon"}>
+            <div className={"mt-1.5  items-center gap-3 p-3"}>
+              <div className={"flex items-center gap-3"}>
                 
             <label htmlFor="Propertie">Properties</label>
                 <AiTwotonePropertySafety />
@@ -199,8 +199,8 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
           </div>
 
           <div className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">
-            <div className={"mt-1.5 flex items-center gap-3 p-3 "}>
-              <div className={"formStyle.Form_box_input_box_icon"}>
+            <div className={"mt-1.5  items-center gap-3 p-3 "}>
+              <div className={"flex items-center gap-3"}>
                 
             <label htmlFor="Price">Price</label>
                 <AiTwotonePropertySafety />
