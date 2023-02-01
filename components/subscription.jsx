@@ -55,7 +55,7 @@ export default function Subscription() {
             >
               <path
                 strokeLinecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
                 d="M13 7l5 5m0 0l-5 5m5-5H6"
               ></path>
             </svg>

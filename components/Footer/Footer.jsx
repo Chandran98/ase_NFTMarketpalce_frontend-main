@@ -55,7 +55,7 @@ export default function Footer() {
       <div className="p-3 mt-3 ml-6 flex-[1%]">
         <h1 className="font-bold">Discover</h1>
         <div className="dropdown flex-col  p-4 bg-white w-300px rounded-lg  ">
-          <Discoverdata classPrps=" text-xs"/>
+          <Discoverdata classPrps=" text-xs" />
         </div>
       </div>
       <div className=" flex-[2%]">

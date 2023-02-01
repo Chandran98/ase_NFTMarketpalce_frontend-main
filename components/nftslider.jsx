@@ -223,7 +223,7 @@ export default function Nftslider() {
                         strokeWidth="1.5"
                         strokeMiterlimit="10"
                         strokeLinecap="round"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       ></path>
                       <path
                         d="M20.5 12H3.67004"
@@ -231,7 +231,7 @@ export default function Nftslider() {
                         strokeWidth="1.5"
                         strokeMiterlimit="10"
                         strokeLinecap="round"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       ></path>
                     </svg>
                   </button>
@@ -248,7 +248,7 @@ export default function Nftslider() {
                         strokeWidth="1.5"
                         strokeMiterlimit="10"
                         strokeLinecap="round"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       ></path>
                       <path
                         d="M3.5 12H20.33"
@@ -256,7 +256,7 @@ export default function Nftslider() {
                         strokeWidth="1.5"
                         strokeMiterlimit="10"
                         strokeLinecap="round"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       ></path>
                     </svg>
                   </button>
@@ -287,7 +287,7 @@ export default function Nftslider() {
                       fill="#ef4444"
                       strokeWidth="1.5"
                       strokeLinecap="round"
-                      stroke-linejoin="round"
+                      strokeLinejoin="round"
                     ></path>
                   </svg>
                   <span className="ml-2 text-sm">

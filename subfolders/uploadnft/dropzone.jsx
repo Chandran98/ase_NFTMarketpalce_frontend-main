@@ -34,7 +34,7 @@ const DropZone = ({
     maxSize: 5000000,
   });
   return (
-    <div className={"mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-neutral-300 dark:border-neutral-6000 border-dashed rounded-xl"}>
+    <div className={"mt-1    justify-center px-6 pt-5 pb-6 border-2 border-neutral-300 dark:border-neutral-6000 border-dashed rounded-xl"}>
       <div className={"space-y-1 text-center"} {...getRootProps()}>
         <input {...getInputProps()} />
         <div className={" leading-3 p-4 "}>
@@ -56,52 +56,56 @@ const DropZone = ({
         </div>
       </div>
 
-      {fileUrl && (
-        <aside className={" p-8 mt-12 rounded-lg"}>
-          <div className={" grid grid-cols-2 gap-12"}>
+      {fileUrl ?
+      (
+        <div className={" p-8 mt-12 rounded-lg border "}>
+          <div className={"flex "}>
             <Image src={fileUrl} alt="nft image" width={200} height={200} />
 
-            <div className={" text-lg font-semibold"}>
-              <div className={" flex items-center justify-between font-bold text-lg"}>
-                <p>
-                  <samp>NFT Name:</samp>
-                  {name || ""}
+            <div className={" p-4"}>
+              <div className={" flex items-center justify-between font-bold text-md"}>
+                <p className="flex-1">
+                  <span  className="text-md font-bold ">Name:</span>
+                <span  className=" px-4 text-md font-normal">{name || ""}</span>
                 </p>
-                <p>
-                  <samp>Website:</samp>
-                  {website || ""}
+                <p className="flex-1">
+                  <span className="   text-md font-bold ">Website:</span>
+                  <span  className=" px-4 text-md font-normal">{website || ""}</span>
                 </p>
               </div>
 
               <div className={""}>
                 <p>
-                  <span>Description</span>
-                  {description || ""}
+                  <span className="  text-md font-bold">Description</span>
+                  <span  className=" px-4 text-md font-normal">{description || ""}</span>
                 </p>
               </div>
 
               <div className={" grid grid-cols-3"}>
                 <p>
-                  <span>Royalties</span>
-                  {royalties || ""}
+                  <span className="  text-md font-bold">Royalties</span>
+                  <span  className=" px-4 text-md font-normal">{royalties || ""}</span>
                 </p>
                 <p>
-                  <span>FileSize</span>
-                  {fileSize || ""}
+                  <span className="  text-md font-bold">FileSize</span>
+                  <span  className=" px-4 text-md font-normal">{fileSize || ""}</span>
                 </p>
                 <p>
-                  <span>Properties</span>
-                  {properties || ""}
+                  <span className="  text-md font-bold">Properties</span>
+                  <span  className=" px-4 text-md font-normal">{properties || ""}</span>
+           
                 </p>
                 <p>
-                  <span>Category</span>
-                  {category || ""}
+                  <span className="  text-md font-bold">Category</span>
+                  <span  className=" px-4 text-md font-normal">{category || ""}</span>
+         
+                  
                 </p>
               </div>
             </div>
           </div>
-        </aside>
-      )}
+        </div>
+      ):""}
     </div>
   );
 };

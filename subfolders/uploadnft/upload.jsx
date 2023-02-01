@@ -4,12 +4,12 @@ import { FaPercent } from "react-icons/fa";
 import { AiTwotonePropertySafety } from "react-icons/ai";
 import { TiTick } from "react-icons/ti";
 import Image from "next/image";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 
 import images from "../../img";
 import DropZone from "../uploadnft/dropzone";
 
-const UloadNFT = ({ uploadToIPFS, createNFT }) => {
+const NFTUpload = ({ uploadToIPFS, createNFT }) => {
   const [price, setPrice] = useState("");
   const [active, setActive] = useState(0);
   const [name, setName] = useState("");
@@ -69,17 +69,29 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
 
       <div className={""}>
         <div className={"mt-1.5"}>
-          <label htmlFor="nft" className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">Item Name</label>
+          <label
+            htmlFor="nft"
+            className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 "
+          >
+            Item Name
+          </label>
           <input
             type="text"
             placeholder="shoaib bhai"
-            className={"block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 disabled:bg-neutral-200 dark:disabled:bg-neutral-800 rounded-2xl text-sm font-normal h-11 px-4 py-3 "}
+            className={
+              "block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 disabled:bg-neutral-200 dark:disabled:bg-neutral-800 rounded-2xl text-sm font-normal h-11 px-4 py-3 "
+            }
             onChange={(e) => setName(e.target.value)}
           />
         </div>
 
         <div className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">
-          <label htmlFor="website" className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">Website</label>
+          <label
+            htmlFor="website"
+            className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 "
+          >
+            Website
+          </label>
           <div className={"formStyle.Form_box_input_box"}>
             {/* <div className={"formStyle.Form_box_input_box_icon"}>
               <MdOutlineHttp />
@@ -100,16 +112,16 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
           </p>
         </div>
 
-        <div className="my-8"> 
-        <div className=" text-lg  font-medium text-neutral-900 dark:text-neutral-200 ">
-          <label htmlFor="description">Description</label>
-          
-          <p className="pb-4  text-sm font-medium">
-            The description will be included on the items detail page
-            underneath its image. Markdown syntax is supported.
-          </p>
-        </div>
-        <textarea
+        <div className="my-8">
+          <div className=" text-lg  font-medium text-neutral-900 dark:text-neutral-200 ">
+            <label htmlFor="description">Description</label>
+
+            <p className="pb-4  text-sm font-medium">
+              The description will be included on the items detail page
+              underneath its image. Markdown syntax is supported.
+            </p>
+          </div>
+          <textarea
             name=""
             id=""
             cols="30"
@@ -121,12 +133,19 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
         </div>
 
         <div className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">
-          <label className=" text-lg  font-medium text-neutral-900 dark:text-neutral-200 " htmlFor="name">Choose collection</label>
+          <label
+            className=" text-lg  font-medium text-neutral-900 dark:text-neutral-200 "
+            htmlFor="name"
+          >
+            Choose collection
+          </label>
           <p className={"text-neutral-500 dark:text-neutral-400 text-sm"}>
             Choose an exiting collection or create a new one
           </p>
 
-          <div className={" flex overflow-auto py-2 space-x-4 customScrollBar "}>
+          <div
+            className={" flex overflow-auto py-2 space-x-4 customScrollBar "}
+          >
             {categoryArry.map((el, i) => (
               <div
                 className={`${" rounded-lg p-4 cursor-pointer border"} ${
@@ -149,7 +168,9 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
                     <TiTick />
                   </div>
                 </div>
-                <p className="font-semibold mt-3  text-black">Crypto Legend - {el.category} </p>
+                <p className="font-semibold mt-3  text-black">
+                  Crypto Legend - {el.category}{" "}
+                </p>
               </div>
             ))}
           </div>
@@ -157,26 +178,35 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
 
         <div className={"grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-2.5"}>
           <div className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">
-           
             <div className={"mt-1.5 flex items-center gap-3 "}>
-            <label className="nc-Label text-lg font-medium text-neutral-900 dark:text-neutral-200 " htmlFor="Royalties">Royalties</label>
-            <FaPercent />
-           
+              <label
+                className="nc-Label text-lg font-medium text-neutral-900 dark:text-neutral-200 "
+                htmlFor="Royalties"
+              >
+                Royalties
+              </label>
+              <FaPercent />
             </div>
-            <input className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 disabled:bg-neutral-200 dark:disabled:bg-neutral-800 rounded-2xl text-sm font-normal h-11 px-4 py-3 "
-                type="text"
-                placeholder="20%"
-                onChange={(e) => setRoyalties(e.target.value)}
-              />
+            <input
+              className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 disabled:bg-neutral-200 dark:disabled:bg-neutral-800 rounded-2xl text-sm font-normal h-11 px-4 py-3 "
+              type="text"
+              placeholder="20%"
+              onChange={(e) => setRoyalties(e.target.value)}
+            />
           </div>
           <div className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">
-           
             <div className={"mt-1.5  items-center gap-3 p-3"}>
               <div className={"flex items-center gap-3"}>
-              <label className="nc-Label text-lg font-medium text-neutral-900 dark:text-neutral-200 " htmlFor="size">Size</label>
+                <label
+                  className="nc-Label text-lg font-medium text-neutral-900 dark:text-neutral-200 "
+                  htmlFor="size"
+                >
+                  Size
+                </label>
                 <MdOutlineAttachFile />
               </div>
-              <input className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 disabled:bg-neutral-200 dark:disabled:bg-neutral-800 rounded-2xl text-sm font-normal h-11 px-4 py-3 "
+              <input
+                className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 disabled:bg-neutral-200 dark:disabled:bg-neutral-800 rounded-2xl text-sm font-normal h-11 px-4 py-3 "
                 type="text"
                 placeholder="165MB"
                 onChange={(e) => setFileSize(e.target.value)}
@@ -186,11 +216,11 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
           <div className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">
             <div className={"mt-1.5  items-center gap-3 p-3"}>
               <div className={"flex items-center gap-3"}>
-                
-            <label htmlFor="Propertie">Properties</label>
+                <label htmlFor="Propertie">Properties</label>
                 <AiTwotonePropertySafety />
               </div>
-              <input className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 disabled:bg-neutral-200 dark:disabled:bg-neutral-800 rounded-2xl text-sm font-normal h-11 px-4 py-3 "
+              <input
+                className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 disabled:bg-neutral-200 dark:disabled:bg-neutral-800 rounded-2xl text-sm font-normal h-11 px-4 py-3 "
                 type="text"
                 placeholder="Properties"
                 onChange={(e) => setProperties(e.target.value)}
@@ -201,11 +231,11 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
           <div className="nc-Label text-base font-medium text-neutral-900 dark:text-neutral-200 ">
             <div className={"mt-1.5  items-center gap-3 p-3 "}>
               <div className={"flex items-center gap-3"}>
-                
-            <label htmlFor="Price">Price</label>
+                <label htmlFor="Price">Price</label>
                 <AiTwotonePropertySafety />
               </div>
-              <input className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 disabled:bg-neutral-200 dark:disabled:bg-neutral-800 rounded-2xl text-sm font-normal h-11 px-4 py-3 "
+              <input
+                className="block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 disabled:bg-neutral-200 dark:disabled:bg-neutral-800 rounded-2xl text-sm font-normal h-11 px-4 py-3 "
                 type="text"
                 placeholder="Price"
                 onChange={(e) => setPrice(e.target.value)}
@@ -214,10 +244,26 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
           </div>
         </div>
 
-        <div className={"pt-2 flex flex-col sm:flex-row space-y-3 sm:space-y-0 space-x-0 sm:space-x-3 mt-16 "}>
-            <button  className={"nc-Button relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-3 sm:px-6  ttnc-ButtonSecondary border bg-cyan-700 border-neutral-200 text-white dark:bg-neutral-900 dark:text-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 flex-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-6000 dark:focus:ring-offset-0"}> Up-load </button>
-            
-            <button  className={" nc-Button relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-3 sm:px-6  ttnc-ButtonSecondary border bg-white border-neutral-200 text-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 flex-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-6000 dark:focus:ring-offset-0"}> Preview </button>
+        <div
+          className={
+            "pt-2 flex flex-col sm:flex-row space-y-3 sm:space-y-0 space-x-0 sm:space-x-3 mt-16 "
+          }
+        >
+          <button
+          onClick={async()=>{ createNFT(name,price,image,description,router)}}
+            className={
+              "nc-Button relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-3 sm:px-6  ttnc-ButtonSecondary border bg-cyan-700 border-neutral-200 text-white dark:bg-neutral-900 dark:text-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 flex-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-6000 dark:focus:ring-offset-0"
+            }
+          >Up-load
+          </button>
+
+          <button
+          onClick={()=>{}}
+            className={
+              " nc-Button relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-3 sm:px-6  ttnc-ButtonSecondary border bg-white border-neutral-200 text-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 flex-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-6000 dark:focus:ring-offset-0"
+            }
+          >Preview
+          </button>
           {/* <Button
             btnName="Up load"
             handleClick={async () =>
@@ -247,4 +293,4 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
   );
 };
 
-export default UloadNFT;
+export default NFTUpload;

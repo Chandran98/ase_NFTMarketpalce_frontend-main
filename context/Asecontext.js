@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext } from "react";
 import Web3modal from "web3modal";
 import { ethers } from "ethers";
 import useRouter from "next/router";
@@ -7,7 +7,22 @@ import axios from "axios";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 import { ase_contract_address, ase_abi } from "./constant";
 
-const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
+// const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
+
+const projectId = "2L7vVwKTFbbTpyzpdQ1iKgaUrBE";
+const projectSecretKey = "2513b7fee61815ae6d3c05d47ab4d885";
+const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
+  "base64"
+)}`;
+const subdomain="https://obito.infura-ipfs.io";
+const client = ipfsHttpClient({ 
+  host: "infura-ipfs.io",
+  port: 5001,
+  protocol: "https",
+  headers: {
+    authorization: auth,
+  },
+});
 
 const fetchcontract = (signerOrprovider) =>
   new ethers.Contract(ase_contract_address, ase_abi, signerOrprovider);
@@ -19,6 +34,7 @@ const connectingContract = async () => {
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
     const contract = fetchcontract(signer);
+    console.log(contract);
     return contract;
   } catch (error) {
     console.log(`Something went into pit`, error);
@@ -58,9 +74,11 @@ export const Aseprovider = ({ children }) => {
       if (!window.ethereum) {
         return console.log("Install metamask");
       }
-      const account = await window.ethereum.request({ method: "eth_requestAccounts" });
+      const account = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
       setCurrentAccount(account[0]);
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
       console.log("Error while connecting wallet", error);
     }
@@ -69,10 +87,10 @@ export const Aseprovider = ({ children }) => {
   const uploadToIPFS = async (file) => {
     try {
       const upload = client.add({ content: file });
-      const url = `https://ipfs.infura.io/ipfs/${(await upload).path}`;
+      const url = `${subdomain}/ipfs/${(await upload).path}`;
       return url;
     } catch (error) {
-      console.log("Couldn't upload to chain");
+      console.log("Couldn't upload to chain",error);
     }
   };
 
@@ -83,7 +101,9 @@ export const Aseprovider = ({ children }) => {
       const data = JSON.stringify({ name, description, image });
       try {
         const added = await client.add(data);
-        const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+        const url = `${subdomain}/ipfs/${added.path}`;
+        
+        console.log(url,price)
         await createSale(url, price);
       } catch (error) {
         console.log(`Something went wrong ${error}`);
@@ -96,8 +116,9 @@ export const Aseprovider = ({ children }) => {
       console.log(url, formInputPrice, isReselling, id);
 
       const price = ethers.utils.parseUnits(formInputPrice, "ether");
-      const contract = await connectWallet();
+      const contract = await connectingContract();
       const listingPrice = await contract.getListingPrice();
+      console.log(listingPrice);
 
       const transaction = !isReselling
         ? await contract.Createnft(url, price, {

@@ -14,10 +14,8 @@ export default function Home() {
         <link rel="icon" href="/fav.png" />
       </Head>
       <main>
-     <div > <Aseprovider>
         <Homepage />
         <Sidebar />
-        </Aseprovider></div>
       </main>
      
     </>

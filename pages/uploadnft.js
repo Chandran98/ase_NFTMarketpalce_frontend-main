@@ -1,15 +1,14 @@
-/* eslint-disable react-hooks/rules-of-hooks */
+
 import React, { useEffect, useState, useContext } from "react";
 
 import dropzone from "../subfolders/uploadnft/dropzone";
 import Upload from "../subfolders/uploadnft/upload";
 import Footer from "../components/Footer/Footer"
 
-// //SMART CONTRACT IMPORT
-// import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
+import {Asecontext} from "../context/Asecontext";
 
-const uploadNFT = () => {
-  // const { uploadToIPFS, createNFT } = useContext(NFTMarketplaceContext);
+const UploadNFT = () => {
+  const {uploadToIPFS,createNft} =useContext(Asecontext);
   return (
     <div className="">
     <div className={" w-full m-20 "}>
@@ -31,8 +30,8 @@ const uploadNFT = () => {
         </div>
 
         <div className={"mt-5 "}>
-          {/* <Upload uploadToIPFS={uploadToIPFS} createNFT={createNFT} /> */}
-          <Upload />
+          <Upload uploadToIPFS={uploadToIPFS} createNFT={createNft} />
+         
         </div>
       </div>
     </div>
@@ -41,4 +40,4 @@ const uploadNFT = () => {
   );
 };
 
-export default uploadNFT;
+export default UploadNFT;
