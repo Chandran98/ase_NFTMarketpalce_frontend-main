@@ -51,6 +51,7 @@ contract ASE is ERC721URIStorage {
         listingprice = _listingprice;
     }
     function getListingPrice()public view returns(uint256){
+        console.log(listingprice);
         return listingprice;
     }
 

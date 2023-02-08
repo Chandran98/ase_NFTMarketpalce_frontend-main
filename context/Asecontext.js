@@ -101,7 +101,7 @@ export const Aseprovider = ({ children }) => {
       const data = JSON.stringify({ name, description, image });
       try {
         const added = await client.add(data);
-        const url = `${subdomain}/ipfs/${added.path}`;
+        const url = `https://infura-ipfs.io//ipfs/${added.path}`;
         
         console.log(url,price)
         await createSale(url, price);
@@ -110,23 +110,24 @@ export const Aseprovider = ({ children }) => {
       }
     }
   };
-
   const createSale = async (url, formInputPrice, isReselling, id) => {
     try {
       console.log(url, formInputPrice, isReselling, id);
 
       const price = ethers.utils.parseUnits(formInputPrice, "ether");
+      console.log(price);
       const contract = await connectingContract();
       const listingPrice = await contract.getListingPrice();
-      console.log(listingPrice);
+      console.log(listingPrice,"1212");
 
       const transaction = !isReselling
         ? await contract.Createnft(url, price, {
-            value: listingPrice.toString(),
-          })
+          
+          value: listingPrice.toString(),
+        })
         : await contract.resellnft(id, price, {
-            value: listingPrice.toString(),
-          });
+          value: listingPrice.toString(),
+        })
       await transaction.wait();
       console.log(transaction);
     } catch (error) {
