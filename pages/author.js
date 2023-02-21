@@ -11,7 +11,7 @@ import Footer from "../components/Footer/Footer";
 
 
 // //IMPORT SMART CONTRACT DATA
-// import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
+// import { Asecontext } from "../Context/Asecontext";
 
 const Author = () => {
   const followerArray = [
@@ -55,7 +55,7 @@ const Author = () => {
 
   // IMPORT SMART CONTRACT DATA
   // const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(
-  //   NFTMarketplaceContext
+  //   Asecontext
   // );
 
   const [nfts, setNfts] = useState([]);

@@ -74,7 +74,6 @@ export default function nftslider2() {
                 alt="Background image"
                 width={800}
                 height={150}
-                // objectFit="cover"
               />
 
               <div className={"mt-4 flex items-center "}>

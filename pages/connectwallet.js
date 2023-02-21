@@ -5,10 +5,10 @@ import Image from "next/image";
 import images from "../img";
 
 // //IMPORT FROM SMART CONTRACT
-// import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
+// import { Asecontext } from "../Context/Asecontext";
 const connectWallet = () => {
   const [activeBtn, setActiveBtn] = useState(1);
-  // const { currentAccount, connectWallet } = useContext(NFTMarketplaceContext);
+  // const { currentAccount, connectWallet } = useContext(Asecontext);
   const providerArray = [
     {
       provider: images.provider1,

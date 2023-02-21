@@ -8,7 +8,9 @@ import Footer from "../components/Footer/Footer"
 import {Asecontext} from "../context/Asecontext";
 
 const UploadNFT = () => {
-  const {uploadToIPFS,createNft} =useContext(Asecontext);
+  const {uploadToIPFS,createNFT} =useContext(Asecontext);
+  console.log(typeof createNFT);
+  console.log(typeof uploadToIPFS ,"sdf");
   return (
     <div className="">
     <div className={" w-full m-20 "}>
@@ -30,7 +32,7 @@ const UploadNFT = () => {
         </div>
 
         <div className={"mt-5 "}>
-          <Upload uploadToIPFS={uploadToIPFS} createNFT={createNft} />
+          <Upload uploadToIPFS={uploadToIPFS} createNFT={createNFT }  />
          
         </div>
       </div>

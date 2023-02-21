@@ -8,10 +8,10 @@ import Category from "../components/category";
 import NFTDetailsPage from "../subfolders/nft-detail-page/nft_detail-page";
 import Footer from "../components/Footer/Footer";
 // //IMPORT SMART CONTRACT DATA
-// import { NFTMarketplaceContext } from "../Context/NFTMarketplaceContext";
+// import { Asecontext } from "../Context/Asecontext";
 
 export default function NFTDetails  () {
-  // const { currentAccount } = useContext(NFTMarketplaceContext);
+  // const { currentAccount } = useContext(Asecontext);
 
   // const [nft, setNft] = useState({
   //   image: "",

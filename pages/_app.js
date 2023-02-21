@@ -1,12 +1,12 @@
 import "../styles/globals.css";
 
-import { Aseprovider } from "../context/Asecontext";
+import { NFTMarketplaceProvider } from "../context/Asecontext";
 const MyApp = ({ Component, pageProps }) => (
   <>
-    <Aseprovider>
+    <NFTMarketplaceProvider>
    
-      <Component {...pageProps} />{" "}
-    </Aseprovider>
+      <Component {...pageProps} />
+    </NFTMarketplaceProvider>
   </>
 );
 

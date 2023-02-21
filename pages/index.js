@@ -3,7 +3,6 @@ import React from "react";
 import Sidebar from "../components/Nav_bar/sidebar/sidebar";
 import Homepage from "../pages/home";
 
-import {Aseprovider} from "../context/Asecontext";
 
 export default function Home() {
   return (

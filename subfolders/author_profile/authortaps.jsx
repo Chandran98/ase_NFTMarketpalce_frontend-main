@@ -70,38 +70,38 @@ const AuthorTaps = ({
       setActiveBtn(5);
     }
   };
-const btnclass="flex-shrink-0 block font-medium px-4 py-2 text-sm sm:px-6 sm:py-2.5 capitalize rounded-full focus:outline-none text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-100 hover:text-neutral-900 hover:bg-neutral-100/70 dark:hover:bg-neutral-800 ";
+const BtnClass="flex-shrink-0 block font-medium px-4 py-2 text-sm sm:px-6 sm:py-2.5 capitalize rounded-full focus:outline-none text-neutral-500 dark:text-neutral-400 dark:hover:text-neutral-100 hover:text-neutral-900 hover:bg-neutral-100/70 dark:hover:bg-neutral-800 ";
   return (
     <div className={"flex flex-col lg:flex-row justify-between "}>
       <div className={" w-[80%] m-auto flex justify-between py-24"}>
         <div className={" "}>
           <div className={' flex gap-8 items-center'}>
             <button
-              className={`${activeBtn == 1 ? btnclass : ""}`}
+              className={`${activeBtn == 1 ? BtnClass : ""}`}
               onClick={(e) => openTab(e)}
             >
               Listed NFTs
             </button>
             <button
-              className={`${activeBtn == 2 ? btnclass : ""}`}
+              className={`${activeBtn == 2 ? BtnClass : ""}`}
               onClick={(e) => openTab(e)}
             >
               Own NFT
             </button>
             <button
-              className={`${activeBtn == 3 ? btnclass : ""}`}
+              className={`${activeBtn == 3 ? BtnClass : ""}`}
               onClick={(e) => openTab(e)}
             >
               Liked
             </button>
             <button
-              className={`${activeBtn == 4 ? btnclass : ""}`}
+              className={`${activeBtn == 4 ? BtnClass : ""}`}
               onClick={(e) => openTab(e)}
             >
               Following
             </button>
             <button
-              className={`${activeBtn == 5 ? btnclass : ""}`}
+              className={`${activeBtn == 5 ? BtnClass : ""}`}
               onClick={(e) => openTab(e)}
             >
               Followers

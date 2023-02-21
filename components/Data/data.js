@@ -14,13 +14,13 @@ const Discoverdata = ({ classPrps }) => {
   ];
   return (
     <ul>
-      {discoveritems.map((items) => (
+      {discoveritems.map((items,i) => {(
         <li className="py-1" key={items.length}>
           <Link href={items.pages} className={`${classPrps}`}>
             {items.title}
           </Link>
         </li>
-      ))}
+      )})}
     </ul>
   );
 };
@@ -35,13 +35,13 @@ const Helpcenterdata = ({ classProps }) => {
   ];
   return (
     <ul>
-      {helpcenteritems.map((items) => (
+      {helpcenteritems.map((items,i) =>{ (
         <li className="py-1" key={items.length}>
           <Link href={items.pages} className={`${classProps}`}>
             {items.title}
           </Link>
         </li>
-      ))}
+      )})}
     </ul>
   );
 };

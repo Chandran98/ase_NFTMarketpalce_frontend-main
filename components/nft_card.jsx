@@ -40,8 +40,8 @@ export default function NFTCard() {
   // console.log(NFTData);
   return (
     <div className={"grid gap-6 lg:gap-8 sm:grid-cols-2 xl:grid-cols-3 p-8 mx-8"}>
-      {CardArray.map((el) => (
-        <Link href={{ pathname: "/", query: el }}>
+      {CardArray.map((el) => {(
+        <Link  href={{ pathname: "/", query: el }}>
           <div className={"relative bg-white  h-72 m-3 rounded-3xl flex p-8"}>
             {/* image */}
             <div className={"flex aspect-w-11 aspect-h-12 w-full rounded-3xl "}>
@@ -138,7 +138,7 @@ export default function NFTCard() {
             </div>
           </div>
         </Link>
-      ))}
+      )})}
     </div>
   );
 }

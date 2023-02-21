@@ -22,7 +22,7 @@ const NFTUpload = ({ uploadToIPFS, createNFT }) => {
   const [image, setImage] = useState(null);
 
   const router = useRouter();
-
+console.log(typeof createNFT,"sdfasdawweqweqwe")
   const categoryArry = [
     {
       image: images.nft_image_1,
@@ -250,9 +250,9 @@ const NFTUpload = ({ uploadToIPFS, createNFT }) => {
           }
         >
           <button
-          onClick={async()=>{ createNFT(name,price,image,description,router)}}
+          onClick={()=>{createNFT(name,price,image,description,router)} }
             className={
-              "nc-Button relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-3 sm:px-6  ttnc-ButtonSecondary border bg-cyan-700 border-neutral-200 text-white dark:bg-neutral-900 dark:text-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 flex-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-6000 dark:focus:ring-offset-0"
+              " relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-3 sm:px-6  ttnc-ButtonSecondary border bg-cyan-700 border-neutral-200 text-white dark:bg-neutral-900 dark:text-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 flex-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-6000 dark:focus:ring-offset-0"
             }
           >Up-load
           </button>

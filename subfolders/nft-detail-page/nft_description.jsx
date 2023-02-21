@@ -25,7 +25,7 @@ import images from "../../img";
 import NFTTabs from "../nft-detail-page/nft_tab";
 
 // //IMPORT SMART CONTRACT
-// import { NFTMarketplaceContext } from "../../Context/NFTMarketplaceContext";
+// import { Asecontext } from "../../Context/Asecontext";
 
 const NFTDescription = ({ nft }) => {
   const [social, setSocial] = useState(false);
@@ -102,7 +102,7 @@ const NFTDescription = ({ nft }) => {
   };
 
   // //SMART CONTRACT DATA
-  // const { buyNFT, currentAccount } = useContext(NFTMarketplaceContext);
+  // const { buyNFT, currentAccount } = useContext(Asecontext);
 
   return (
     <div className={"flex-1 p-16"}>

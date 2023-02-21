@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import React, {  useContext} from "react";
+import React from "react";
 import Button from "./Button/button"
-// import {useContext} from "react";
+import {useContext} from "react";
 
 import {Asecontext }from "../context/Asecontext";
 
