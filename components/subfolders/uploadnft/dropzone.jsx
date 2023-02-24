@@ -3,7 +3,7 @@ import React, { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import Image from "next/image";
 
-import images from "../../img";
+import images from "../../../img";
 
 const DropZone = ({
   title,

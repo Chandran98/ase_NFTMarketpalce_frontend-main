@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import Brand from "../components/brand";
-import Banner from "../subfolders/Collection_components/banner";
-import NFTCardTwo from "../subfolders/Collection_components/nft_card_two";
-import SearchBar from "../subfolders/search/search_page";
+import Banner from "../components/subfolders/Collection_components/banner";
+import NFTCardTwo from "../components/subfolders/Collection_components/nft_card_two";
+import SearchBar from "../components/subfolders/search/search_page";
 import Slider from "../components/slider/slider";
 import Footer from "../components/Footer/Footer";
 import Filter from "../components/filterart";
@@ -80,6 +80,7 @@ export default function Search() {
   //   images.nft_image_1,
   //   images.nft_image_2,
   // ];
+  console.log(nfts,"huhj");
   return (
     <div className={""}>
       <Banner bannerImage={images.creatorbackground2} />

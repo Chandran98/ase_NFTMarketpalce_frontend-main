@@ -13,7 +13,7 @@ const SearchBar = ({ onHandleSearch, onClearSearch }) => {
   useEffect(() => {
     if (search) {
       onHandleSearch(search);
-    } else {
+    } else {  
       // onClearSearch();
     }
   }, [search]);

@@ -1,5 +1,5 @@
 import React from "react";
-import Subscription from "../subfolders/subscription";
+import Subscription from "../components/subfolders/subscription";
 const subscription = () => {
   const subscriptionArray = [
     {

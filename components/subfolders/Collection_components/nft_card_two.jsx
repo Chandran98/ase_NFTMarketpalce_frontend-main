@@ -4,7 +4,7 @@ import BsImage from "react-icons/bs";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { MdVerified, MdTimer } from "react-icons/md";
 import Link from "next/link";
-import LikeProfile from "../../components/likeprofile";
+import LikeProfile from "../../likeprofile";
 
 const NFTCardTwo = ({ NFTData }) => {
   const [like, setLike] = useState(false);
@@ -26,6 +26,7 @@ const NFTCardTwo = ({ NFTData }) => {
   return (
     <div className="grid grid-cols-3 ">
       {NFTData.map((data, index) => (
+       <Link href={{pathname:"/nft-details",query:data}} key={index}>
         <div key={index} className="w-[80%] flex flex-col gap-9 mb-56 p-7 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300">
         {/* <div>{data.price}</div> 
         <div>{data.seller}</div> 
@@ -76,7 +77,7 @@ const NFTCardTwo = ({ NFTData }) => {
             </div>
           </div>
         </div>
-        </div>
+        </div></Link>
       ))}
     </div>
   );

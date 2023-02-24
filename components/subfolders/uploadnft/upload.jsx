@@ -6,7 +6,7 @@ import { TiTick } from "react-icons/ti";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-import images from "../../img";
+import images from "../../../img";
 import DropZone from "../uploadnft/dropzone";
 
 const NFTUpload = ({ uploadToIPFS, createNFT }) => {

@@ -1,8 +1,8 @@
 
 import React, { useEffect, useState, useContext } from "react";
 
-import dropzone from "../subfolders/uploadnft/dropzone";
-import Upload from "../subfolders/uploadnft/upload";
+import dropzone from "../components/subfolders/uploadnft/dropzone";
+import Upload from "../components/subfolders/uploadnft/upload";
 import Footer from "../components/Footer/Footer"
 
 import {Asecontext} from "../context/Asecontext";

@@ -14,7 +14,7 @@ import {
 } from "react-icons/ti";
 import { BsThreeDots } from "react-icons/bs";
 
-import images from "../../img";
+import images from "../../../img";
 // import { Button } from "../../components/componentsindex.js";
 
 // const AuthorProfileCard = ({ currentAccount }) => {

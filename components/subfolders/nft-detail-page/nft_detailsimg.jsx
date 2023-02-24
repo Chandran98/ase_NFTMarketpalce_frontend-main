@@ -4,7 +4,7 @@ import { BsImages } from "react-icons/bs";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 
-import images from "../../img";
+import images from "../../../img";
 
 const NFTDetailsImg = ({ nft }) => {
   const [description, setDescription] = useState(true);
@@ -57,8 +57,8 @@ const NFTDetailsImg = ({ nft }) => {
 
           <div className={" grid  col-span-2 row-end-1"}>
             <Image
-            src={images.nft_image_3}
-              // src={nft.image}
+            // src={images.nft_image_3}
+              src={nft.image}
               className={"rounded-lg"}
               alt="NFT image"
               width={700}
@@ -82,7 +82,7 @@ const NFTDetailsImg = ({ nft }) => {
           <div className={" "}>
             {/* <p>{nft.description}</p> */}
             
-            <p>{"nft.description  asdf sdfdf  fadsfa fd as dfw cdsc caa dfadf adf fasdf asdf  aerwr efa"}</p>
+            <p>{nft.description}</p>
           </div>
         )}
 
@@ -102,11 +102,11 @@ const NFTDetailsImg = ({ nft }) => {
             <p>
               <small>Contract Address</small>
               <br></br>
-              {/* {nft.seller} */}
+              {nft.seller}
             </p>
             <p>
               <small>Token ID</small>
-              {/* &nbsp; &nbsp; {nft.tokenId} */}
+             {nft.tokenId}
             </p>
           </div>
         )}

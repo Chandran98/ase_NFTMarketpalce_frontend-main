@@ -8,9 +8,9 @@ const NFTDetailsPage = ({ nft }) => {
       <div className={" w-[80%] m-auto flex"}>
         {/* <NFTDetailsImg nft={nft} />
         <NFTDescription nft={nft} /> */}
-        <NFTDetailsImg />
-        <NFTDescription />
-      </div>
+        <NFTDetailsImg  nft={nft} />
+        <NFTDescription nft={nft}  />
+      </div> 
     </div>
   );
 };

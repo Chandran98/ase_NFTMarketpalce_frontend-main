@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-key */
 import React, { useState } from "react";
-import images from "../../img";
+import images from "../../../img";
 import NFTCardTwo from "../Collection_components/nft_card_two";
-import FollowerTabCard from "../../components/follower/follower_card";
+import FollowerTabCard from "../../../components/follower/follower_card";
 // import { Loader } from "../../components/componentsindex";
 
 const AuthorNFTCardBox = ({

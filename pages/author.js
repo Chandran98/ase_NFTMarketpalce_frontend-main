@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-key */
 import React, { useState, useEffect, useContext } from "react";
 
-import Banner from "../subfolders/Collection_components/banner";
+import Banner from "../components/subfolders/Collection_components/banner";
 import Brand   from "../components/brand";
 import Title from "../utils/titlecard";
 import FollowerTabCard from "../components/follower/follower_card";
 import images from "../img";
-import { AuthorProfileCard,  AuthorTaps,  AuthorNFTCardBox} from "../subfolders/author_profile/index";
+import { AuthorProfileCard,  AuthorTaps,  AuthorNFTCardBox} from "../components/subfolders/author_profile/index";
 import Footer from "../components/Footer/Footer";
 
 
