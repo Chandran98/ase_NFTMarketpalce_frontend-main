@@ -2,16 +2,19 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import Banner from "../components/subfolders/Collection_components/banner";
-import Brand   from "../components/brand";
+import Brand from "../components/brand";
 import Title from "../utils/titlecard";
 import FollowerTabCard from "../components/follower/follower_card";
 import images from "../img";
-import { AuthorProfileCard,  AuthorTaps,  AuthorNFTCardBox} from "../components/subfolders/author_profile/index";
+import {
+  AuthorProfileCard,
+  AuthorTaps,
+  AuthorNFTCardBox,
+} from "../components/subfolders/author_profile/index";
 import Footer from "../components/Footer/Footer";
 
-
 // //IMPORT SMART CONTRACT DATA
-// import { Asecontext } from "../Context/Asecontext";
+import { Asecontext } from "../context/Asecontext";
 
 const Author = () => {
   const followerArray = [
@@ -53,49 +56,40 @@ const Author = () => {
   const [follower, setFollower] = useState(false);
   const [following, setFollowing] = useState(false);
 
-  // IMPORT SMART CONTRACT DATA
-  // const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(
-  //   Asecontext
-  // );
+  const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(Asecontext);
 
   const [nfts, setNfts] = useState([]);
   const [myNFTs, setMyNFTs] = useState([]);
 
-  // useEffect(() => {
-  //   fetchMyNFTsOrListedNFTs("fetchItemsListed").then((items) => {
-  //     setNfts(items);
-  //   });
-  // }, []);
+  useEffect(() => {
+    fetchMyNFTsOrListedNFTs("fetchItemsListed").then((items) => {
+      setNfts(items);
+    });
+  }, []);
 
-  // useEffect(() => {
-  //   fetchMyNFTsOrListedNFTs("fetchMyNFTs").then((items) => {
-  //     setMyNFTs(items);
-  //   });
-  // }, []);
+  useEffect(() => {
+    fetchMyNFTsOrListedNFTs("fetchMyNFTs").then((items) => {
+      setMyNFTs(items);
+    });
+  }, []);
 
   return (
-    <div className={""}>
-      
+    <div >
       <Banner bannerImage={images.creatorbackground2} />
-      
-      <div className="-mt-20"> <AuthorProfileCard  /></div>
-      {/* <AuthorProfileCard currentAccount={currentAccount} /> */}
-     {/* <AuthorTaps
-        setCollectiables={setCollectiables}
-        setCreated={setCreated}
-        setLike={setLike}
-        setFollower={setFollower}
-        setFollowing={setFollowing}
-      /> */}
-       <AuthorTaps
+
+      <div className="px-16">
+      <div className="-mt-20">
+<AuthorProfileCard currentAccount={currentAccount} />
+      </div>
+    
+      <AuthorTaps
         setCollectiables={setCollectiables}
         setCreated={setCreated}
         setLike={setLike}
         setFollower={setFollower}
         setFollowing={setFollowing}
       />
-
-       <AuthorNFTCardBox
+      <AuthorNFTCardBox
         collectiables={collectiables}
         created={created}
         like={like}
@@ -104,19 +98,25 @@ const Author = () => {
         nfts={nfts}
         myNFTS={myNFTs}
       />
-    
-      <div className="m-16 rounded-2xl p-24 bg-white"> 
-      <Title
-        heading="Popular Creators"
-        paragraph="Click on music icon and enjoy NTF music or audio
+      </div>
+      
+
+      <div className="m-16 rounded-2xl p-24 bg-white">
+        <Title
+          heading="Popular Creators"
+          paragraph="Click on music icon and enjoy NTF music or audio
 "
-      />
-      <div className={"grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-8 lg:mt-10"}>
-        
-        {followerArray.map((el, i) => (
-          <FollowerTabCard i={i} el={el} />
-        ))}
-      </div> </div>
+        />
+        <div
+          className={
+            "grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-8 lg:mt-10"
+          }
+        >
+          {followerArray.map((el, i) => (
+            <FollowerTabCard i={i} el={el} />
+          ))}
+        </div>{" "}
+      </div>
 
       <Brand />
       <Footer />

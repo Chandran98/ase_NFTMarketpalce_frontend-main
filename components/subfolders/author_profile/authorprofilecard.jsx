@@ -15,14 +15,11 @@ import {
 import { BsThreeDots } from "react-icons/bs";
 
 import images from "../../../img";
-// import { Button } from "../../components/componentsindex.js";
 
-// const AuthorProfileCard = ({ currentAccount }) => {
-const AuthorProfileCard = ({  }) => {
+const AuthorProfileCard = ({ currentAccount }) => {
   const [share, setShare] = useState(false);
   const [report, setReport] = useState(false);
 
-  //copyAddress function
   const copyAddress = () => {
     const copyText = document.getElementById("myInput");
 
@@ -61,7 +58,7 @@ const AuthorProfileCard = ({  }) => {
           />
         </div>
 
-        <div className={"p-5 ml-3 md:pt-1 md:ml-6 xl:ml-14 "}>
+        <div className={" ml-3 md:pt-1 md:ml-6 xl:ml-14 "}>
           <h2 className="inline-flex items-center text-2xl sm:text-3xl lg:text-4xl font-semibold">
             Dony Herrera
             <span className="ml-2">
@@ -69,10 +66,10 @@ const AuthorProfileCard = ({  }) => {
             </span>
           </h2>
 
-          <div className={"flex items-center text-sm font-medium space-x-2.5 mt-2.5 text-green-600 cursor-pointer"}>
+          <div className={"flex  items-center text-sm font-medium  mt-2.5 text-green-600 cursor-pointer"}>
             
-            <input className=" w-[30%] text-neutral-700 dark:text-neutral-300" type="text" value={"0fxd7d6sadsadsdasdadsadsadsadsaa64a3sdas5d6ds"} id="myInput" />
-            {/* <input className="text-neutral-700 dark:text-neutral-300" type="text" value={currentAccount} id="myInput" /> */}
+            <input className="  text-neutral-700 dark:text-neutral-300" type="text" value={currentAccount} id="myInput" />
+          
             <FiCopy
               onClick={() => copyAddress()}
               className={'ml-2'}
@@ -101,7 +98,6 @@ const AuthorProfileCard = ({  }) => {
         </div>
 
         <div className={" md:static left-5 top-4 sm:left-auto sm:top-5 sm:right-5 flex flex-row-reverse justify-end"}>
-          {/* <Button btnName="Follow" handleClick={() => {}} /> */}
           <MdCloudUpload
             onClick={() => openShare()}
             className={"w-10 h-10 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-neutral-100 hover:bg-neutral-200 dark:hover:bg-neutral-700 dark:bg-neutral-800 cursor-pointer mx-2 p-2"}

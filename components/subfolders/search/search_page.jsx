@@ -14,7 +14,7 @@ const SearchBar = ({ onHandleSearch, onClearSearch }) => {
     if (search) {
       onHandleSearch(search);
     } else {  
-      // onClearSearch();
+      onClearSearch();
     }
   }, [search]);
 

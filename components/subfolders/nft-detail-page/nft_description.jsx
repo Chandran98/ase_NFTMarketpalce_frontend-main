@@ -21,7 +21,6 @@ import {
 import { BiTransferAlt, BiDollar } from "react-icons/bi";
 
 import images from "../../../img";
-// import { Button } from "../../components/componentsindex.js";
 import NFTTabs from "../nft-detail-page/nft_tab";
 import { Asecontext } from "../../../context/Asecontext";
 
@@ -100,7 +99,7 @@ const NFTDescription = ({ nft }) => {
   };
 
   // //SMART CONTRACT DATA
-  const { buyNFT,currentAccount } = useContext(Asecontext);
+  const { buyNFT, currentAccount } = useContext(Asecontext);
   // const { currentAccount } = useContext(Asecontext);
 
   return (
@@ -108,7 +107,7 @@ const NFTDescription = ({ nft }) => {
       <div className={"m-auto "}>
         {/* //Part ONE */}
         <div className=" ">
-          <div className="mb-8">
+          <div className="mb-3">
             <div className={" flex items-center justify-between relative "}>
               <p className="nc-Badge inline-flex px-2.5 py-1 rounded-full font-medium text-xs relative text-green-800 bg-green-100  ">
                 Virtual Worlds
@@ -176,7 +175,7 @@ const NFTDescription = ({ nft }) => {
               </div>
             </div>
             {/* //Part TWO */}
-            <div className={" pb-9 space-y-5"}>
+            <div className={"  space-y-5"}>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
                 {nft.name} #{nft.tokenId}
               </h1>
@@ -185,7 +184,7 @@ const NFTDescription = ({ nft }) => {
                   <Image
                     src={images.user1}
                     alt="profile"
-                    width={40}
+                    width={50}
                     height={40}
                     className={" rounded-[50%]"}
                   />
@@ -198,17 +197,17 @@ const NFTDescription = ({ nft }) => {
                       }}
                     >
                       <span className="flex items-center gap-2">
-                        Karl Costa <MdVerified />
+                        {nft.name}<MdVerified />
                       </span>
                     </Link>
                   </div>
                 </div>
 
-                <div className={" flex items-center gap-4 leading-5  pl-8"}>
+                <div className={"flex items-center gap-8 pb-6 pl-8 self-center"}>
                   <Image
-                    src={images.creatorbackground1}
+                    src={images.getAble}
                     alt="profile"
-                    width={40}
+                    width={50}
                     height={40}
                     className={" rounded-[50%]"}
                   />
@@ -224,9 +223,8 @@ const NFTDescription = ({ nft }) => {
             </div>
           </div>
 
-          <div className={" flex mt-16 items-center text-lg gap-4"}>
+          <div className={" flex  items-center text-lg gap-4"}>
             <div className="">
-              {" "}
               <p className="flex items-center gap-2">
                 <MdTimer /> <span>Auction ending in:</span>
               </p>
@@ -250,10 +248,10 @@ const NFTDescription = ({ nft }) => {
               </div>
             </div>
           </div>
-          <div className=" border-b-2 mb-5">
+          <div className=" border-b-2 ">
             <div
               className={
-                " flex flex-col sm:flex-row sm:items-end sm:justify-between mt-5 mb-10"
+                " flex flex-col sm:flex-row sm:items-end sm:justify-between mt-5 "
               }
             >
               <div
@@ -266,16 +264,16 @@ const NFTDescription = ({ nft }) => {
                 </small>
                 <p>
                   {nft.price}
-                  ETH <span>( ≈ $3,221.22)</span>
+                  ETH <span>( ≈ ${nft.price *2556})</span>
                 </p>
               </div>
 
-              <span className="text-sm text-neutral-500 dark:text-neutral-400 ml-5 mt-2 sm:mt-0 sm:ml-10 gap-6">
+              <span className="text-sm text-neutral-500 dark:text-neutral-400 ml-5 mt-2 sm:mt-0 sm:ml-10 ">
                 [96 in stock]
               </span>
             </div>
 
-            <div className={"pb-9 pt-14 flex gap-8  my-4 "}>
+            <div className={"py-8 px-8 flex gap-8   "}>
               {/* <button
                 className={
                   " flex gap-4 items-center sm:px-8  sm:py-2 text-xs   sm:text-sm leading-5 font-medium rounded-full focus:outline-none focus:ring-2 ring-primary-300 text-neutral-700 dark:text-neutral-300  dark:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100"
@@ -285,12 +283,13 @@ const NFTDescription = ({ nft }) => {
                 <FaWallet /> Place Bid
               </button> */}
 
-              {
-              currentAccount == nft.seller.toLowerCase() ? (
+              {currentAccount == nft.seller.toLowerCase() ? (
                 <p>You cant buy your own NFT</p>
               ) : currentAccount == nft.owner.toLowerCase() ? (
-                
-<button  classStyle={" text-lg p-5"} ><FaPercentage /> List on marketplace</button>
+                <button classStyle={"flex gap-4 items-center sm:px-8  sm:py-2 text-xs   sm:text-sm leading-5 font-medium rounded-full focus:outline-none focus:ring-2 ring-primary-300 text-neutral-700 dark:text-neutral-300  dark:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100 "}>
+                  <FaPercentage /> List on marketplace
+                </button>
+              ) : (
                 // <Button
                 //   icon=< FaWallet />
                 //   btnName="List on Marketplace"
@@ -301,16 +300,15 @@ const NFTDescription = ({ nft }) => {
                 //   }
                 //   classStyle={" text-lg p-5"}
                 // />
-              ) : (
-                
-<button  classStyle={" text-lg p-5"} ><FaPercentage /> Buy NFT</button>
-                // <button></button>
-                // <Button
-                //   icon=<FaWallet />
-                //   btnName="Buy NFT"
-                //   handleClick={() => buyNFT(nft)}
-                //   classStyle={" text-lg p-5"}
-                // />
+                <button
+                  classStyle={
+                    "  flex gap-4 items-center sm:px-8  sm:py-2 text-xs   sm:text-sm leading-5 font-medium rounded-full focus:outline-none focus:ring-2 ring-primary-300 text-neutral-700 dark:text-neutral-300  dark:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100 "
+                  }
+                  onClick={() => buyNFT(nft)}
+                >
+                  <FaWallet />Buy NFT
+                </button>
+              
               )}
 
               <button
@@ -320,12 +318,6 @@ const NFTDescription = ({ nft }) => {
               >
                 <FaPercentage /> Make offer
               </button>
-              {/* <Button
-                icon=<FaPercentage />
-                btnName="Make offer"
-                handleClick={() => {}}
-                classStyle={" text-lg p-5"}
-              /> */}
             </div>
           </div>
           <div className="flex justify-start pd-1 space-x-2.5 rounded-full  border-neutral-300 dark:border-neutral-500">

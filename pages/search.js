@@ -33,53 +33,13 @@ export default function Search() {
     }
   };
 
-  // const onClearSearch=()=>{
-  //   if(nfts.length && nftsCopy.length){
-  //     setNfts(nftsCopy);
-  //   }
-  // }
-  // useEffect(() => {
-  //   try {
-  //     if (currentAccount) {
-  //       fetchNFTs().then((items) => {
-  //         setNfts(items.reverse());
-  //         setNftsCopy(items);
-  //         console.log(nfts);
-  //       });
-  //     }
-  //   } catch (error) {
-  //     setError("Please reload the browser", error);
-  //   }
-  // }, []);
+  const onClearSearch=()=>{
+    if(nfts.length && nftsCopy.length){
+      setNfts(nftsCopy);
+    }
+  }
 
-  // const onHandleSearch = (value) => {
-  //   const filteredNFTS = nfts.filter(({ name }) =>
-  //     name.toLowerCase().includes(value.toLowerCase())
-  //   );
 
-  //   if (filteredNFTS.length === 0) {
-  //     setNfts(nftsCopy);
-  //   } else {
-  //     setNfts(filteredNFTS);
-  //   }
-  // };
-
-  // const onClearSearch = () => {
-  //   if (nfts.length && nftsCopy.length) {
-  //     setNfts(nftsCopy);
-  //   }
-  // };
-
-  // const collectionArray = [
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  //   images.nft_image_3,
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  //   images.nft_image_3,
-  //   images.nft_image_1,
-  //   images.nft_image_2,
-  // ];
   console.log(nfts,"huhj");
   return (
     <div className={""}>
@@ -87,11 +47,10 @@ export default function Search() {
       <div className="  ml-64 -mt-6 justify-center">
         <SearchBar
         onHandleSearch={onHandleSearch}
-        // onClearSearch={onClearSearch}
+        onClearSearch={onClearSearch}
         />
       </div>
       <Filter />
-      {/* {nfts === undefined ? <Loader /> : <NFTCardTwo NFTData={nfts} />} */}
       <div className="px-32">
         {nfts === null ? <Loader /> : <NFTCardTwo NFTData={nfts} />}
       </div>

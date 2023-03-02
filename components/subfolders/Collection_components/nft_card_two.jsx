@@ -27,7 +27,7 @@ const NFTCardTwo = ({ NFTData }) => {
     <div className="grid grid-cols-3 ">
       {NFTData.map((data, index) => (
        <Link href={{pathname:"/nft-details",query:data}} key={index}>
-        <div key={index} className="w-[80%] flex flex-col gap-9 mb-56 p-7 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300">
+        <div key={index} className="w-[80%] flex flex-col gap-9 mb-56 p-7 hover:bg-slate-100 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300">
         {/* <div>{data.price}</div> 
         <div>{data.seller}</div> 
         <div>{data.image}</div> 
