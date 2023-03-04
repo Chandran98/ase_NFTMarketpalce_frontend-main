@@ -16,7 +16,7 @@ import Dragsilder from "../components/slider/slider";
 import Brand from "../components/brand";
 import Video from "../components/video_slide";
 
-// import {NFTMarketplaceProvider }from "../context/Asecontext";
+// import {NFTMarketplaceProvider }from "../context/AseContext";
 export default function Home() {
   // const {checkIfWalletConnected , connectingWithSmartContract}= useContext(NFTMarketplaceProvider);
 
@@ -34,11 +34,11 @@ export default function Home() {
       <Dragsilder/>
       <Follower/>
       <Filterart/>
-      <Nftcard/>
+      {/* <Nftcard/> */}
       <Category/>
       <Brand/>
       <Video/>
-      <Subscription/>
+      <Subscription/>   
       <Footer />
     </>
   );

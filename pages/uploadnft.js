@@ -5,10 +5,10 @@ import dropzone from "../components/subfolders/uploadnft/dropzone";
 import Upload from "../components/subfolders/uploadnft/upload";
 import Footer from "../components/Footer/Footer"
 
-import {Asecontext} from "../context/Asecontext";
+import {AseContext} from "../context/AseContext";
 
 const UploadNFT = () => {
-  const {uploadToIPFS,createNFT} =useContext(Asecontext);
+  const {uploadToIPFS,createNFT} =useContext(AseContext);
   console.log(typeof createNFT);
   console.log(typeof uploadToIPFS ,"sdf");
   return (

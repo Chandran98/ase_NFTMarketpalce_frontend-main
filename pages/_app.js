@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 
-import { NFTMarketplaceProvider } from "../context/Asecontext";
+import { NFTMarketplaceProvider } from "../context/AseContext";
 const MyApp = ({ Component, pageProps }) => (
   <>
     <NFTMarketplaceProvider>

@@ -22,7 +22,7 @@ import { BiTransferAlt, BiDollar } from "react-icons/bi";
 
 import images from "../../../img";
 import NFTTabs from "../nft-detail-page/nft_tab";
-import { Asecontext } from "../../../context/Asecontext";
+import { AseContext } from "../../../context/AseContext";
 
 const NFTDescription = ({ nft }) => {
   const [social, setSocial] = useState(false);
@@ -99,8 +99,8 @@ const NFTDescription = ({ nft }) => {
   };
 
   // //SMART CONTRACT DATA
-  const { buyNFT, currentAccount } = useContext(Asecontext);
-  // const { currentAccount } = useContext(Asecontext);
+  const { buyNFT, currentAccount } = useContext(AseContext);
+  // const { currentAccount } = useContext(AseContext);
 
   return (
     <div className={"flex-1 p-16"}>
@@ -286,22 +286,12 @@ const NFTDescription = ({ nft }) => {
               {currentAccount == nft.seller.toLowerCase() ? (
                 <p>You cant buy your own NFT</p>
               ) : currentAccount == nft.owner.toLowerCase() ? (
-                <button classStyle={"flex gap-4 items-center sm:px-8  sm:py-2 text-xs   sm:text-sm leading-5 font-medium rounded-full focus:outline-none focus:ring-2 ring-primary-300 text-neutral-700 dark:text-neutral-300  dark:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100 "}>
-                  <FaPercentage /> List on marketplace
+                <button onClick={()=>(router.push(`/reselltoken? id=${nft.tokenId}&tokenURI=${nft.tokenURI}&price=${nft.price}`))} className={"flex gap-4 items-center sm:px-8  sm:py-2 text-xs   sm:text-sm leading-5 font-medium rounded-full focus:outline-none focus:ring-2 ring-primary-300 text-neutral-700 dark:text-neutral-300  dark:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100 "}>
+                  <FaWallet /> List on marketplace
                 </button>
               ) : (
-                // <Button
-                //   icon=< FaWallet />
-                //   btnName="List on Marketplace"
-                //   handleClick={() =>
-                //     router.push(
-                //       `/reSellToken?id=${nft.tokenId}&tokenURI=${nft.tokenURI}&price=${nft.price}`
-                //     )
-                //   }
-                //   classStyle={" text-lg p-5"}
-                // />
                 <button
-                  classStyle={
+                  className={
                     "  flex gap-4 items-center sm:px-8  sm:py-2 text-xs   sm:text-sm leading-5 font-medium rounded-full focus:outline-none focus:ring-2 ring-primary-300 text-neutral-700 dark:text-neutral-300  dark:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100 "
                   }
                   onClick={() => buyNFT(nft)}

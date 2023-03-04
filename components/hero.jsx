@@ -4,10 +4,10 @@ import React from "react";
 import Button from "./Button/button"
 import {useContext} from "react";
 
-import {Asecontext }from "../context/Asecontext";
+import {AseContext }from "../context/AseContext";
 
 export default function Hero() {
-  const {title} = useContext(Asecontext);
+  const {title} = useContext(AseContext);
   return (
     <div className=" lg:flex bg-white p-24  ">
       <div className="  flex-1 h-screen mt-8  ">

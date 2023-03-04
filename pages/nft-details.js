@@ -8,10 +8,10 @@ import Category from "../components/category";
 import NFTDetailsPage from "../components/subfolders/nft-detail-page/nft_detail-page";
 import Footer from "../components/Footer/Footer";
 // //IMPORT SMART CONTRACT DATA
-import { Asecontext } from "../Context/Asecontext";
+import { AseContext } from "../Context/AseContext";
 
 export default function NFTDetails  () {
-  // const { currentAccount } = useContext(Asecontext);
+  // const { currentAccount } = useContext(AseContext);
 
   const [nft, setNft] = useState({
     image: "",
@@ -30,7 +30,6 @@ export default function NFTDetails  () {
 
   return (
     <div className="bg-white">
-      {/* <NFTDetailsPage nft={nft} /> */}
       <NFTDetailsPage nft={nft} />
       <Category />
       <Brand/>

@@ -87,7 +87,7 @@ const contactus = () => {
               {/* <Button
                 btnName="Send Message"
                 handleClick={() => {}}
-                classStyle={Style.button}
+                className={Style.button}
               /> */}
             </form>
           </div>

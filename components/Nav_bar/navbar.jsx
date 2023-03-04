@@ -6,7 +6,7 @@ import image from "../../img";
 import { MdNotificationsActive } from "react-icons/md";
 import {CgProfile} from "react-icons/cg";
 import { Discoverdata, Helpcenterdata } from "../Data/data";
-import { Asecontext } from "../../context/Asecontext";
+import { AseContext } from "../../context/AseContext";
 export default function Landingpagenavbar() {
   const [discoverdropdown, setdiscoverdropdown] = useState(false);
   const handlediscoverdropdown = () => {
@@ -41,8 +41,9 @@ export default function Landingpagenavbar() {
     profiledropdown ? setprofiledropdown(false) : setprofiledropdown(true);
   };
 
-  const { currentAccount, connectWallet } = useContext(Asecontext);
+  const { currentAccount, connectWallet } = useContext(AseContext);
 
+  console.log(discoverdropdown);
   return (
     <div className="container py-5 relative flex justify-between items-center space-x-4 xl:space-x-8 p-32 ">
       <div className="flex  flex-grow items-center space-x-3 sm:space-x-8 lg:space-x-10"><Link href="/" className="ml-3 ">
@@ -122,17 +123,35 @@ export default function Landingpagenavbar() {
            <CgProfile className=" text-xl "/>
         </button>
         {profiledropdown && (
-          <div className="item-dropdown cursor-pointer flex-col">
-            <div className="dropdown flex-col absolute p-4 bg-white w-300px rounded-lg  ">
-              <ul>
+          <div className="">
+            <div className="  flex-col absolute mx-4 p-4   bg-gray-50    w-64 rounded-lg  ">
+              <div className="py-2 ">
+              
+                <div className="flex px-2 gap-4">
+                <Image
+              src={image.user9}
+              className={"rounded-full"}
+              alt="NFT image"
+              width={40}
+              height={40}
+            />
+                <div>
+                <span className="font-bold text-lg">  Obito </span>
+                  <span>  {currentAccount.slice(0,15)}..</span>
+                </div>
+               
+                </div>
+              <ul className="pt-4">
                 {profileitems.map((items) => {
                   return (
-                    <li className="py-1">
+                    <li className=" hover:rounded-lg hover:font-bold hover:bg-cyan-200 m-2 p-2 ">
                       <Link href="/home1">{items.title}</Link>
                     </li>
                   );
                 })}
               </ul>
+              </div>
+              
             </div>
           </div>
         )}
@@ -141,3 +160,5 @@ export default function Landingpagenavbar() {
     </div>
   );
 }
+
+// item-dropdown cursor-pointer flex-col

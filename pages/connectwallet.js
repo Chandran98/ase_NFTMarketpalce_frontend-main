@@ -2,13 +2,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 
-import images from "../img";
-
-// //IMPORT FROM SMART CONTRACT
-// import { Asecontext } from "../Context/Asecontext";
+import images from "../img";import { AseContext } from "../context/AseContext";
 const connectWallet = () => {
   const [activeBtn, setActiveBtn] = useState(1);
-  // const { currentAccount, connectWallet } = useContext(Asecontext);
+  const {currentAccount, connectWallet}=useContext(AseContext)
   const providerArray = [
     {
       provider: images.provider1,
@@ -50,7 +47,7 @@ const connectWallet = () => {
                 src={el.provider}
                 alt={el.provider}
                 width={60}
-                height={60}objectFit ="cover"
+                height={60}
                 className={" bg-white p-2 rounded-full"}
               />
               <p className="font-bold text-lg">{el.name}</p>

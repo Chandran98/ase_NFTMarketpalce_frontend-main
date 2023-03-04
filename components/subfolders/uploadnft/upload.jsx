@@ -285,7 +285,7 @@ console.log(typeof createNFT,"sdfasdawweqweqwe")
           {/* <Button
             btnName="Preview"
             handleClick={() => {}}
-            classStyle={"w-full grid self-center text-3xl"}
+            className={"w-full grid self-center text-3xl"}
           /> */}
         </div>
       </div>

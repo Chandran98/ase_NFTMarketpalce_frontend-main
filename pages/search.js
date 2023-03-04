@@ -8,10 +8,10 @@ import Footer from "../components/Footer/Footer";
 import Filter from "../components/filterart";
 import Loader from "../utils/loader";
 import images from "../img";
-import { Asecontext } from "../context/Asecontext";
+import { AseContext } from "../context/AseContext";
 
 export default function Search() {
-  const { fetchNFTs, setError, currentAccount } = useContext(Asecontext);
+  const { fetchNFTs, setError, currentAccount } = useContext(AseContext);
   const [nfts, setNfts] = useState(null);
   const [nftsCopy, setNftsCopy] = useState([]);
 
@@ -33,21 +33,19 @@ export default function Search() {
     }
   };
 
-  const onClearSearch=()=>{
-    if(nfts.length && nftsCopy.length){
-      setNfts(nftsCopy);
-    }
-  }
+  // const onClearSearch=()=>{
+  //   if(nfts.length && nftsCopy.length){
+  //     setNfts(nftsCopy);
+  //   }
+  // }
 
-
-  console.log(nfts,"huhj");
   return (
     <div className={""}>
       <Banner bannerImage={images.creatorbackground2} />
       <div className="  ml-64 -mt-6 justify-center">
         <SearchBar
         onHandleSearch={onHandleSearch}
-        onClearSearch={onClearSearch}
+        // onClearSearch={onClearSearch}
         />
       </div>
       <Filter />

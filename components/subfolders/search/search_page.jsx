@@ -14,13 +14,13 @@ const SearchBar = ({ onHandleSearch, onClearSearch }) => {
     if (search) {
       onHandleSearch(search);
     } else {  
-      onClearSearch();
+      // onClearSearch();
     }
   }, [search]);
 
   return (
     <div className={" w-full  relative px-12"}>
-      <div className={" w-[50%]  h-14 flex px-12  justify-between  relative mx-16   border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white  rounded-full items-center "}>
+      <div className={" w-[50%]  h-14 flex px-12  justify-between  relative mx-16 border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white  rounded-full items-center "}>
         <div className="flex  items-center gap-4">
         <BsSearch className={"  cursor-pointer "} />
         <input

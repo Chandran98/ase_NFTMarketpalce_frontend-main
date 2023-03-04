@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function bt({ btnName, handleClick, icon, classStyle }) {
+export default function bt({ btnName, handleClick, icon, className }) {
   return (
     <div className={""}>
       <button

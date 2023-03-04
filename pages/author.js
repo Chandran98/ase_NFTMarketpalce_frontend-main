@@ -14,7 +14,7 @@ import {
 import Footer from "../components/Footer/Footer";
 
 // //IMPORT SMART CONTRACT DATA
-import { Asecontext } from "../context/Asecontext";
+import { AseContext } from "../context/AseContext";
 
 const Author = () => {
   const followerArray = [
@@ -56,7 +56,7 @@ const Author = () => {
   const [follower, setFollower] = useState(false);
   const [following, setFollowing] = useState(false);
 
-  const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(Asecontext);
+  const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(AseContext);
 
   const [nfts, setNfts] = useState([]);
   const [myNFTs, setMyNFTs] = useState([]);
@@ -112,8 +112,8 @@ const Author = () => {
             "grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mt-8 lg:mt-10"
           }
         >
-          {followerArray.map((el, i) => (
-            <FollowerTabCard i={i} el={el} />
+          {followerArray.map((el, i) => (<div key={i}>
+            <FollowerTabCard i={i} el={el} /></div>
           ))}
         </div>{" "}
       </div>

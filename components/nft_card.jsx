@@ -1,33 +1,43 @@
 /* eslint-disable react/jsx-key */
-import React, { useState } from "react";
+import React, { useState,useContext,useEffect } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { BsImages } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
-
-//INTERNAL IMPORT
 import images from "../img";
+import { AseContext } from "../context/AseContext";
 
 export default function NFTCard() {
-  const CardArray = [
-    { imaged: images.nft_image_1, name: "CHEX", price: "1", id: "2321" },
-    { imaged: images.nft_image_2, name: "CHEX", price: "1", id: "4646" },
-    { imaged: images.nft_image_3, name: "CHEX", price: "1", id: "4521" },
-    { imaged: images.nft_image_1, name: "CHEX", price: "1", id: "6754" },
-    { imaged: images.nft_image_2, name: "CHEX", price: "1", id: "3783" },
-    { imaged: images.nft_image_3, name: "CHEX", price: "1", id: "2387" },
-    { imaged: images.nft_image_1, name: "CHEX", price: "1", id: "5288" },
-    { imaged: images.nft_image_2, name: "CHEX", price: "1", id: "7342" },
-    { imaged: images.nft_image_3, name: "CHEX", price: "1", id: "9600" },
-    // images.nft_image_1,
-    // images.nft_image_2,
-    // images.nft_image_3,
-    // images.nft_image_1,
-    // images.nft_image_2,
-    // images.nft_image_3,
-  ];
+  // const CardArray = [
+  //   { imaged: images.nft_image_1, name: "CHEX", price: "1", id: "2321" },
+  //   { imaged: images.nft_image_2, name: "CHEX", price: "1", id: "4646" },
+  //   { imaged: images.nft_image_3, name: "CHEX", price: "1", id: "4521" },
+  //   { imaged: images.nft_image_1, name: "CHEX", price: "1", id: "6754" },
+  //   { imaged: images.nft_image_2, name: "CHEX", price: "1", id: "3783" },
+  //   { imaged: images.nft_image_3, name: "CHEX", price: "1", id: "2387" },
+  //   { imaged: images.nft_image_1, name: "CHEX", price: "1", id: "5288" },
+  //   { imaged: images.nft_image_2, name: "CHEX", price: "1", id: "7342" },
+  //   { imaged: images.nft_image_3, name: "CHEX", price: "1", id: "9600" },
+  //   // images.nft_image_1,
+  //   // images.nft_image_2,
+  //   // images.nft_image_3,
+  //   // images.nft_image_1,
+  //   // images.nft_image_2,
+  //   // images.nft_image_3,
+  // ];
 
-  const [like, setLike] = useState(true);
+const [like, setLike] = useState(true);
+const{fetchNFTs} =useContext(AseContext);
+const[nft, setNft]= useState([]);
+const [nftsCopy,setNftsCopy]=useState([]);
+
+useEffect(()=>{
+  fetchNFTs().then((items)=>{
+    setNft(items);
+    setNftsCopy(items);
+  })
+},[]);
+console.log(nft,"myNft");
 
   const likeNft = () => {
     if (!like) {
@@ -36,17 +46,15 @@ export default function NFTCard() {
       setLike(false);
     }
   };
-
-  // console.log(NFTData);
   return (
     <div className={"grid gap-6 lg:gap-8 sm:grid-cols-2 xl:grid-cols-3 p-8 mx-8"}>
-      {CardArray.map((el) => {(
-        <Link  href={{ pathname: "/", query: el }}>
+      {nft.map((myNft) => {(
+        // <Link  }>
           <div className={"relative bg-white  h-72 m-3 rounded-3xl flex p-8"}>
             {/* image */}
             <div className={"flex aspect-w-11 aspect-h-12 w-full rounded-3xl "}>
               <Image
-                src={el.imaged}
+                src={myNft.image}
                 alt="NFT images"
                 width={800}
                 height={600}
@@ -137,7 +145,7 @@ export default function NFTCard() {
               </div>
             </div>
           </div>
-        </Link>
+        // </Link>
       )})}
     </div>
   );

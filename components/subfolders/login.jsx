@@ -70,7 +70,7 @@
 //           </div>
 //         </div>
 
-//         <Button btnName="Continue" classStyle={Style.button} />
+//         <Button btnName="Continue" className={Style.button} />
 //       </div>
 //     </div>
 //   );

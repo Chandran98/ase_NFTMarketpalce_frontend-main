@@ -66,7 +66,7 @@ const connectToTransferFunds = async () => {
   }
 };
 
-export const Asecontext = React.createContext();
+export const AseContext = React.createContext();
 
 export const NFTMarketplaceProvider = ({ children }) => {
   const titleData = "Discover, collect, and sell NFTs";
@@ -121,6 +121,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
         method: "eth_requestAccounts",
       });
       setCurrentAccount(accounts[0]);
+      console.log("connected")
       // window.location.reload();
     } catch (error) {
       setError("Error while connecting to wallet");
@@ -438,7 +439,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
     }
   };
   return (
-    <Asecontext.Provider
+    <AseContext.Provider
       value={{
         checkIfWalletConnected,
         connectWallet,
@@ -463,6 +464,6 @@ export const NFTMarketplaceProvider = ({ children }) => {
       }}
     >
       {children}
-    </Asecontext.Provider>
+    </AseContext.Provider>
   );
 };
