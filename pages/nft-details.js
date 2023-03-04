@@ -1,13 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 
 import { useRouter } from "next/router";
-
-//INTERNAL IMPORT
 import  Brand from "../components/brand";
 import Category from "../components/category";
 import NFTDetailsPage from "../components/subfolders/nft-detail-page/nft_detail-page";
 import Footer from "../components/Footer/Footer";
-// //IMPORT SMART CONTRACT DATA
 import { AseContext } from "../Context/AseContext";
 
 export default function NFTDetails  () {

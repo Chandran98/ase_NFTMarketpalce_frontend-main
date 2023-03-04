@@ -58,7 +58,7 @@ const aboutus = () => {
             </p>
           </div>
           <div className={""}>
-            <Image src={images.hero2} />
+            <Image alt="Nft" src={images.hero2} />
           </div>
         </div>
 

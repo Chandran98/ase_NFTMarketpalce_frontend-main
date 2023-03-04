@@ -6,11 +6,12 @@ import Image from "next/image";
 //IMPORT SMART CONTRACT
 import { AseContext } from "../context/AseContext";
 
-const reSellToken = () => {
+const ReSellToken = () => {
+  
+  const router = useRouter();
   const { createSale } = useContext(AseContext);
   const [image, setImage] = useState("");
   const [price, setPrice] = useState('"');
-  const router = useRouter();
   const { id, tokenURI } = router.query;
 
   const fetchNFT = async () => {
@@ -63,4 +64,4 @@ const reSellToken = () => {
   );
 };
 
-export default reSellToken;
+export default ReSellToken;
