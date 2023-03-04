@@ -6,7 +6,7 @@ import image from "../../img";
 import { MdNotificationsActive } from "react-icons/md";
 import {CgProfile} from "react-icons/cg";
 import { Discoverdata, Helpcenterdata } from "../Data/data";
-import { AseContext } from "../../context/Asecontext";
+import { AseContext } from "../../context/AseContext";
 export default function Landingpagenavbar() {
   const [discoverdropdown, setdiscoverdropdown] = useState(false);
   const handlediscoverdropdown = () => {

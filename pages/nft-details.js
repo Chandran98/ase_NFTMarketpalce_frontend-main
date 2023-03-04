@@ -5,7 +5,7 @@ import  Brand from "../components/brand";
 import Category from "../components/category";
 import NFTDetailsPage from "../components/subfolders/nft-detail-page/nft_detail-page";
 import Footer from "../components/Footer/Footer";
-import { AseContext } from "../Context/AseContext";
+import { AseContext } from "../context/AseContext";
 
 export default function NFTDetails  () {
   // const { currentAccount } = useContext(AseContext);
